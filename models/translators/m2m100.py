@@ -99,8 +99,15 @@ class M2M100Translator(BaseTranslator):
         # Atomic step 2: Model Weights Allocation
         try:
             self._logger.info("Loading model tensor graphs into device memory...")
-            self._model = M2M100ForConditionalGeneration.from_pretrained(self._checkpoint).to(self._device)
+            self._model = M2M100ForConditionalGeneration.from_pretrained(
+                self._checkpoint
+            ).to(self._device)
+
             self._model.eval()
+
+            # Disable the model's default max_length to avoid
+            # conflict with BridgeDEUX's max_new_tokens setting.
+            self._model.generation_config.max_length = None
         except Exception as e:
             raise ModelLoadError(f"Model tensor graph allocation failed: {str(e)}") from e
 

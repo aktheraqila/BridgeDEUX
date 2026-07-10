@@ -93,6 +93,11 @@ class MarianTranslator(BaseTranslator):
             self._logger.info("Loading model tensor graphs into device memory...")
             self._model = MarianMTModel.from_pretrained(self._checkpoint).to(self._device)
             self._model.eval()
+
+            # BridgeDEUX controls generation using max_new_tokens.
+            # Disable the model's default max_length to avoid conflicts.
+            self._model.generation_config.max_length = None
+            
         except Exception as e:
             raise ModelLoadError(f"Model tensor graph allocation failed: {str(e)}") from e
 
