@@ -9,6 +9,7 @@ from bridge.config import ProjectConfig
 from bridge.logger import BridgeLogger
 
 from evaluation.evaluator import EvaluationEngine
+from evaluation.metrics import BleuMetric, ChrfMetric
 
 
 def main() -> None:
@@ -19,7 +20,14 @@ def main() -> None:
         "EvaluationRunner"
     )
 
-    engine = EvaluationEngine()
+    active_metrics = [
+        BleuMetric(),
+        ChrfMetric(),
+    ]
+
+    engine = EvaluationEngine(
+        metrics=active_metrics,
+    )
 
     print("\n========================================================")
     print(" BridgeDEUX Evaluation Framework")
@@ -51,7 +59,7 @@ def main() -> None:
 
         print("-" * 56)
 
-    print("\nDiscovery & Ingestion completed successfully.")
+    print("\nDiscovery & Evaluation completed successfully.")
 
 
 if __name__ == "__main__":

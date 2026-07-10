@@ -11,8 +11,9 @@ import pandas as pd
 
 from bridge.config import ProjectConfig
 from bridge.logger import BridgeLogger
-from evaluation.exceptions import EvaluationDataError
+from evaluation.exceptions import EvaluationDataError, EvaluationError
 from evaluation.result import ModelEvaluation
+from evaluation.metrics import EvaluationMetric
 
 
 class EvaluationEngine:
@@ -24,12 +25,14 @@ class EvaluationEngine:
     def __init__(
         self,
         benchmark_dir: Path | None = None,
+        metrics: list[EvaluationMetric] | None = None,
     ) -> None:
 
         if benchmark_dir is None:
             benchmark_dir = ProjectConfig.BENCHMARK_DIR
 
         self._benchmark_dir = benchmark_dir
+        self._metrics = metrics or []
         
         self._logger = BridgeLogger.get_logger(
             self.__class__.__name__
@@ -142,10 +145,9 @@ class EvaluationEngine:
         model_name = str(df["model_name"].iloc[0])
         model_version = str(df["model_version"].iloc[0])
 
-        valid_df = df[
-            df["translation"].notna()
-            & df["reference_translation"].notna()
-        ]
+        valid_df = df.dropna(
+            subset=["translation", "reference_translation"]
+        )
 
         failed_samples = total_samples - len(valid_df)
 
@@ -157,8 +159,41 @@ class EvaluationEngine:
             )
 
         # ---------------------------------------------------------
-        # Metric strategies will populate this dictionary in 11.2
+        # Dynamic Metric Execution
         # ---------------------------------------------------------
+        computed_metrics: dict[str, float] = {}
+
+        if self._metrics and not valid_df.empty:
+            
+            predictions = valid_df["translation"].tolist()
+            references = [[ref] for ref in valid_df["reference_translation"].tolist()]
+            
+            for metric in self._metrics:
+                
+                self._logger.info(
+                    "Computing %s for %s...",
+                    metric.name,
+                    model_name,
+                )
+                
+                try:
+                    
+                    score = metric.compute(
+                        predictions=predictions,
+                        references=references,
+                    )
+                    
+                    computed_metrics[metric.name] = score
+                    
+                except EvaluationError as e:
+                    
+                    self._logger.error(
+                        "Failed to compute %s for %s: %s",
+                        metric.name,
+                        model_name,
+                        str(e),
+                    )
+                    continue
 
         return ModelEvaluation(
             model_name=model_name,
@@ -166,6 +201,7 @@ class EvaluationEngine:
             total_samples=total_samples,
             failed_samples=failed_samples,
             mean_latency_ms=float(mean_latency),
+            metrics=computed_metrics,
         )
 
     def evaluate_all(self) -> list[ModelEvaluation]:
