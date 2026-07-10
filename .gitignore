@@ -1,0 +1,32 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+
+# Hugging Face
+.cache/
+datasets/cache/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Downloaded datasets
+datasets/raw/
+
+# Generated benchmark results
+benchmarks/*.parquet
+results/
+
+# Temporary files
+project_tree.txt
+
+# Generated manifests
+datasets/reports/*.json
