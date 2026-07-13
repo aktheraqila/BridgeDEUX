@@ -19,16 +19,19 @@ class BaseTranslator(ABC):
     # ---------------------------------------------------------
     # Identity & Metadata Primitives
     # ---------------------------------------------------------
+    @property
     @abstractmethod
     def model_name(self) -> str:
         """Returns the human-readable identifier of the model."""
         pass
         
+    @property
     @abstractmethod
     def model_version(self) -> str:
         """Returns the exact model checkpoint or version identifier."""
         pass
 
+    @property
     @abstractmethod
     def device(self) -> str:
         """Returns the hardware device the model is loaded on (e.g., 'cuda', 'cpu')."""
@@ -54,6 +57,14 @@ class BaseTranslator(ABC):
         errors when switching models during sequential benchmarking operations.
         """
         pass
+
+    def close(self) -> None:
+        """
+        Releases hardware resources. Safe to call multiple times.
+        Provides the required teardown contract for experiments/run_benchmark.py.
+        """
+        if self.is_loaded():
+            self.unload()
 
     # ---------------------------------------------------------
     # Execution & Inference Primitives

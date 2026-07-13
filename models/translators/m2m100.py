@@ -66,12 +66,15 @@ class M2M100Translator(BaseTranslator):
         self._model: M2M100ForConditionalGeneration | None = None
         self._is_loaded = False
 
+    @property
     def model_name(self) -> str:
         return self._display_name
 
+    @property
     def model_version(self) -> str:
         return self._checkpoint
 
+    @property
     def device(self) -> str:
         return self._device
 
@@ -197,8 +200,8 @@ class M2M100Translator(BaseTranslator):
         overall_end = time.perf_counter()
         
         return TranslationResult(
-            model_name=self.model_name(),
-            model_version=self.model_version(),
+            model_name=self.model_name,
+            model_version=self.model_version,
             source_text=clean_text,
             translation=translation,
             input_tokens=inputs["input_ids"].shape[1],

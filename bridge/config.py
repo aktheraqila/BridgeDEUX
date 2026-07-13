@@ -44,6 +44,8 @@ class ProjectConfig:
     # Dataset directories
     # ------------------------------------------------------------------
 
+    EVALUATION_DIR = PROJECT_ROOT / "evaluation_reports"
+
     DATASETS_DIR: Path = PROJECT_ROOT / "datasets"
 
     RAW_DATA_DIR: Path = DATASETS_DIR / "raw"
@@ -64,7 +66,7 @@ class ProjectConfig:
     # Experiment directories
     # ------------------------------------------------------------------
 
-    BENCHMARK_DIR: Path = PROJECT_ROOT / "benchmarks"
+    BENCHMARK_DIR: Path = CACHE_DIR
 
     MODEL_DIR: Path = PROJECT_ROOT / "models"
 

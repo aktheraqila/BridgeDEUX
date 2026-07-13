@@ -10,6 +10,7 @@ from bridge.logger import BridgeLogger
 
 from evaluation.evaluator import EvaluationEngine
 from evaluation.metrics import BleuMetric, ChrfMetric
+from evaluation.report_generator import ReportGenerator  # <-- NEW IMPORT
 
 
 def main() -> None:
@@ -43,6 +44,9 @@ def main() -> None:
         
         raise SystemExit(1)
 
+    # ---------------------------------------------------------
+    # Console Output
+    # ---------------------------------------------------------
     for result in results:
 
         print(
@@ -59,7 +63,15 @@ def main() -> None:
 
         print("-" * 56)
 
-    print("\nDiscovery & Evaluation completed successfully.")
+    # ---------------------------------------------------------
+    # Report Generation
+    # ---------------------------------------------------------
+    logger.info("Generating evaluation reports...")
+    
+    report_generator = ReportGenerator()
+    report_generator.generate(results)
+
+    print("\nDiscovery, Evaluation, & Reporting completed successfully.")
 
 
 if __name__ == "__main__":

@@ -20,3 +20,20 @@ class EvaluationDataError(EvaluationError):
     corrupted, or fails structural schema validation.
     """
     pass
+
+class BenchmarkError(Exception):
+    """Base exception for all benchmark-related failures."""
+    pass
+
+class CheckpointError(BenchmarkError):
+    """Raised when filesystem/WAL operations fail (e.g., Disk Full)."""
+    pass
+
+
+class TranslationError(Exception):
+    """Raised when the model fails to translate a specific sample."""
+    pass
+
+class CircuitBreakerError(BenchmarkError):
+    """Circuit breaker triggered due to excessive consecutive failures."""
+    pass

@@ -167,7 +167,8 @@ class EvaluationEngine:
             
             predictions = valid_df["translation"].tolist()
             references = [[ref] for ref in valid_df["reference_translation"].tolist()]
-            
+            sources = valid_df["source_text"].tolist() 
+
             for metric in self._metrics:
                 
                 self._logger.info(
@@ -181,6 +182,7 @@ class EvaluationEngine:
                     score = metric.compute(
                         predictions=predictions,
                         references=references,
+                        sources=sources,
                     )
                     
                     computed_metrics[metric.name] = score
@@ -232,3 +234,78 @@ class EvaluationEngine:
                 )
 
         return results
+    
+
+    # ---------------------------------------------------------
+    # CLI Execution Block
+    # ---------------------------------------------------------
+if __name__ == "__main__":
+    import argparse
+    import sys
+    import json  # <--- Added json import
+    
+    from evaluation.metrics import BleuMetric, ChrfMetric, CometMetric
+
+    parser = argparse.ArgumentParser(description="BridgeDEUX Evaluation Engine")
+    parser.add_argument(
+        "--results", 
+        type=str, 
+        required=True, 
+        help="Path to the Parquet results file to evaluate."
+    )
+    
+    args = parser.parse_args()
+    target_path = Path(args.results)
+
+    if not target_path.exists():
+        print(f"[ERROR] Could not find results file at: {target_path}")
+        sys.exit(1)
+
+    print(f"\nInitializing Evaluation Engine for: {target_path.name}...")
+
+    metrics_to_run = [
+        BleuMetric(), 
+        ChrfMetric(),
+        CometMetric()  # Make sure the inner class uses "Unbabel/wmt20-comet-da"
+    ]
+    engine = EvaluationEngine(metrics=metrics_to_run)
+    
+    try:
+        evaluation = engine.evaluate_file(target_path)
+        
+        # Print to terminal
+        print("\n" + "="*50)
+        print("         EVALUATION RESULTS")
+        print("="*50)
+        print(f"Model:          {evaluation.model_name} (v{evaluation.model_version})")
+        print(f"Total Samples:  {evaluation.total_samples}")
+        print(f"Failed Samples: {evaluation.failed_samples}")
+        print(f"Mean Latency:   {evaluation.mean_latency_ms:.2f} ms")
+        print("-" * 50)
+        
+        for metric_name, score in evaluation.metrics.items():
+            print(f"{metric_name.upper()}: {score:.2f}")
+            
+        print("="*50 + "\n")
+
+        # --- NEW CODE: SAVE TO DISK ---
+        report_data = {
+            "model_name": evaluation.model_name,
+            "model_version": evaluation.model_version,
+            "total_samples": evaluation.total_samples,
+            "failed_samples": evaluation.failed_samples,
+            "mean_latency_ms": evaluation.mean_latency_ms,
+            "metrics": evaluation.metrics
+        }
+        
+        # Save it right next to the parquet/csv files
+        report_path = target_path.parent / f"{evaluation.model_name}_evaluation_report.json"
+        with open(report_path, "w", encoding="utf-8") as f:
+            json.dump(report_data, f, indent=4)
+            
+        print(f"[INFO] Evaluation report permanently saved to: {report_path}\n")
+        # ------------------------------
+        
+    except Exception as e:
+        print(f"\n[FATAL] Evaluation failed: {e}")
+        sys.exit(1)

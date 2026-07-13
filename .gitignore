@@ -30,3 +30,13 @@ project_tree.txt
 
 # Generated manifests
 datasets/reports/*.json
+
+.venv311/
+
+__pycache__/
+
+*.pyc
+
+evaluation_reports/
+
+results/
