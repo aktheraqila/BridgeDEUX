@@ -40,3 +40,5 @@ __pycache__/
 evaluation_reports/
 
 results/
+
+models/
