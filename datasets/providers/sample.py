@@ -8,6 +8,7 @@ class DatasetSample:
     target_text: str
     client_id: str | None = None
     file_name: str | None = None
+    audio: dict | None = None
 
 @dataclass(frozen=True, slots=True)
 class DatasetInfo:

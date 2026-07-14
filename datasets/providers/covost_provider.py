@@ -30,10 +30,16 @@ class CoVoSTProvider(DatasetProvider):
         "file",
     )
 
-    def __init__(self, split: str = "test") -> None:
+    def __init__(
+        self,
+        split: str = "test",
+        include_audio: bool = False,
+    ) -> None:
         self._logger = BridgeLogger.get_logger(self.__class__.__name__)
 
         self._split = split
+        self._include_audio = include_audio
+
 
         self._dataset_dir = (
             ProjectConfig.RAW_DATA_DIR
@@ -94,7 +100,10 @@ class CoVoSTProvider(DatasetProvider):
         )
 
     @staticmethod
-    def _row_to_sample(row) -> DatasetSample:
+    def _row_to_sample(
+        row,
+        include_audio: bool,
+    ) -> DatasetSample:
         return DatasetSample(
             id=str(row.id),
             source_text=str(row.sentence),
@@ -109,8 +118,10 @@ class CoVoSTProvider(DatasetProvider):
                 if pd.isna(row.file)
                 else str(row.file)
             ),
+            audio=getattr(row, 'audio', None) if include_audio else None
         )
 
+        
     def __len__(self) -> int:
         self._load_cache()
         return len(self._cache)
@@ -126,7 +137,24 @@ class CoVoSTProvider(DatasetProvider):
             raise IndexError(
                 f"Sample index {index} is out of range."
             )
+        # If audio is requested, read the shard containing the index
+        # because the in-memory cache intentionally excludes audio.
+        if self._include_audio:
+            remaining = index
+            for shard in self._shards:
+                cols = list(self.TARGET_COLUMNS) + ["audio"]
+                df = pd.read_parquet(shard, columns=cols)
+                if remaining < len(df):
+                    # Safely convert the single row to a namedtuple to match itertuples()
+                    row = next(df.iloc[[remaining]].itertuples(index=False))
+                    return self._row_to_sample(row, include_audio=True)
+                
+                remaining -= len(df)
 
+            # Should not happen because we validated index range earlier
+            raise IndexError(f"Sample index {index} is out of range.")
+
+        # Default: return from text-only cache
         row = self._cache.iloc[index]
 
         return DatasetSample(
@@ -155,14 +183,19 @@ class CoVoSTProvider(DatasetProvider):
         )
 
         for shard in self._shards:
+            columns = list(self.TARGET_COLUMNS)
+
+            if self._include_audio:
+                columns.append("audio")
 
             dataframe = pd.read_parquet(
                 shard,
-                columns=list(self.TARGET_COLUMNS),
+                columns=columns,
             )
 
             for row in dataframe.itertuples(index=False):
-                yield self._row_to_sample(row)
+                yield self._row_to_sample(row, include_audio=self._include_audio)
+
 
     def get_info(self) -> DatasetInfo:
         """
