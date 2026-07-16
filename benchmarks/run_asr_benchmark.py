@@ -31,6 +31,10 @@ from bridge.config import ProjectConfig
 from bridge.logger import BridgeLogger
 from bridge.audio import AudioProcessor
 
+from models.asr.vosk import VoskASR
+from pathlib import Path
+from bridge.config import ProjectConfig
+
 from datasets.providers.covost_provider import CoVoSTProvider
 from benchmarks.checkpoint_manager import CheckpointManager
 from benchmarks.exceptions import (
@@ -87,13 +91,32 @@ def log_experiment_provenance(logger: logging.Logger) -> None:
 def get_asr_model(model_name: str) -> BaseASR:
     """Factory to instantiate the requested ASR architecture."""
     name = model_name.lower()
+
     try:
         if name == "whisper":
-            return WhisperCppASR(model_size="base", n_threads=4)
+            return WhisperCppASR(
+                model_size="base",
+                n_threads=4
+            )
+
+        elif name == "vosk":
+            model_path = (
+                ProjectConfig.MODEL_DIR
+                / "vosk"
+                / "vosk-model-small-de-0.15"
+            )
+
+            return VoskASR(model_path)
+
         else:
-            raise BenchmarkError(f"Unknown ASR architecture requested: {model_name}")
+            raise BenchmarkError(
+                f"Unknown ASR architecture requested: {model_name}"
+            )
+
     except (OSError, RuntimeError, FileNotFoundError) as e:
-        raise BenchmarkError(f"Failed to load {model_name} backend: {e}") from e
+        raise BenchmarkError(
+            f"Failed to load {model_name} backend: {e}"
+        ) from e
 
 
 class HardwareMonitor:
@@ -225,7 +248,7 @@ def run_asr_benchmark(
 
                 # Inference Phase
                 # Inference Phase
-                result = asr_model.transcribe(pcm_16k, language="de")
+                result = asr_model.transcribe(pcm_16k)
                 
                 # Calculate audio duration directly from the tensor shape
                 audio_duration_ms = (len(pcm_16k) / 16000) * 1000
@@ -324,11 +347,12 @@ def main() -> None:
     logger = BridgeLogger.get_logger("Main")
     
     parser = argparse.ArgumentParser(description="Run BridgeDEUX offline ASR benchmark.")
-    parser.add_argument("--model", type=str, required=True, choices=["whisper"])
+    parser.add_argument("--model", type=str, required=True, choices=["whisper", "vosk"], help="ASR model to use.")
     parser.add_argument("--split", type=str, default="test", help="Dataset split to evaluate via CoVoSTProvider.")
     parser.add_argument("--limit", type=int, help="Limit the number of samples to process.")
     
     args = parser.parse_args()
+
     
     try:
         run_asr_benchmark(
