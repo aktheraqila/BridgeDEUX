@@ -29,7 +29,8 @@ class EvaluationEngine:
     ) -> None:
 
         if benchmark_dir is None:
-            benchmark_dir = ProjectConfig.BENCHMARK_DIR
+            #benchmark_dir = ProjectConfig.BENCHMARK_DIR
+            benchmark_dir = ProjectConfig.RESULTS_DIR
 
         self._benchmark_dir = benchmark_dir
         self._metrics = metrics or []
@@ -44,7 +45,8 @@ class EvaluationEngine:
         """
 
         targets = sorted(
-            self._benchmark_dir.glob("*_results.parquet")
+            #self._benchmark_dir.glob("*_results.parquet")
+            self._benchmark_dir.rglob("*_results.parquet")
         )
 
         self._logger.info(
@@ -198,6 +200,7 @@ class EvaluationEngine:
                     continue
 
         return ModelEvaluation(
+            experiment_name=target_file.stem.removesuffix("_results"),
             model_name=model_name,
             model_version=model_version,
             total_samples=total_samples,

@@ -18,6 +18,7 @@ class ModelEvaluation:
     metadata and dynamic metrics for a specific model benchmark.
     """
 
+    experiment_name: str
     model_name: str
     model_version: str
     total_samples: int

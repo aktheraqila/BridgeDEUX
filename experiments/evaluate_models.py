@@ -9,7 +9,7 @@ from bridge.config import ProjectConfig
 from bridge.logger import BridgeLogger
 
 from evaluation.evaluator import EvaluationEngine
-from evaluation.metrics import BleuMetric, ChrfMetric
+from evaluation.metrics import BleuMetric, ChrfMetric, CometMetric
 from evaluation.report_generator import ReportGenerator  # <-- NEW IMPORT
 
 
@@ -24,6 +24,7 @@ def main() -> None:
     active_metrics = [
         BleuMetric(),
         ChrfMetric(),
+        CometMetric(),
     ]
 
     engine = EvaluationEngine(

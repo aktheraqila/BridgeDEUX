@@ -1,0 +1,110 @@
+
+===========================================================================
+ A/B Diagnostic Analysis: Encoder
+ FP32 Source : models\onnx\opus_mt_de_en_opt_extended\encoder_model.onnx
+ INT8 Target : models\onnx\opus_mt_de_en_opt_extended_int8\encoder_model.onnx
+===========================================================================
+
+--- 1. File Size & Macro Structural Changes ---
+ File Size (MB)       : 186.68 MB -> 47.62 MB (-139.06 MB)
+ External Tensor Data : No -> No
+ Total Nodes          : 272 -> 405
+ Total Initializers   : 121 -> 195
+
+--- 2. Weight Element Quantization Distribution ---
+ Total Weight Elements: 48,924,208 -> 48,924,282
+ Observed INT8 Elements: 48,622,117 / 48,924,282
+ Observed INT8 Ratio  : 99.38%
+
+--- 3. Initializer Type & Element Breakdown ---
+ FLOAT (32-bit)   | Tensors: 101  -> 101  | Elements:   48,924,163 ->      302,120
+ INT64            | Tensors: 20   -> 20   | Elements:           45 ->           45
+ UINT8            | Tensors: 0    -> 74   | Elements:            0 ->   48,622,117
+
+--- 4. Operator Deltas (Quantization & Changed Ops Only) ---
+ [Quantization Control Operators]
+   MatMulInteger            : 0     -> 36    (Delta: +36)
+   DynamicQuantizeLinear    : 0     -> 24    (Delta: +24)
+   QLinearMatMul            : 0     -> 0     (Delta: +0)
+   QuantizeLinear           : 0     -> 0     (Delta: +0)
+   DequantizeLinear         : 0     -> 1     (Delta: +1)
+   QLinearConv              : 0     -> 0     (Delta: +0)
+
+ [Graph Structural Changes (Suppressed Identical Ops)]
+ * Cast                     : 2     -> 38    (Delta: +36)
+ * MatMul                   : 42    -> 6     (Delta: -36)
+ * Mul                      : 1     -> 73    (Delta: +72)
+
+
+===========================================================================
+ A/B Diagnostic Analysis: Decoder (Standard)
+ FP32 Source : models\onnx\opus_mt_de_en_opt_extended\decoder_model.onnx
+ INT8 Target : models\onnx\opus_mt_de_en_opt_extended_int8\decoder_model.onnx
+===========================================================================
+
+--- 1. File Size & Macro Structural Changes ---
+ File Size (MB)       : 324.52 MB -> 81.66 MB (-242.86 MB)
+ External Tensor Data : No -> No
+ Total Nodes          : 550 -> 773
+ Total Initializers   : 185 -> 311
+
+--- 2. Weight Element Quantization Distribution ---
+ Total Weight Elements: 85,039,910 -> 85,040,036
+ Observed INT8 Elements: 84,923,455 / 85,040,036
+ Observed INT8 Ratio  : 99.86%
+
+--- 3. Initializer Type & Element Breakdown ---
+ FLOAT (32-bit)   | Tensors: 164  -> 164  | Elements:   85,039,865 ->      116,536
+ INT64            | Tensors: 21   -> 21   | Elements:           45 ->           45
+ UINT8            | Tensors: 0    -> 126  | Elements:            0 ->   84,923,455
+
+--- 4. Operator Deltas (Quantization & Changed Ops Only) ---
+ [Quantization Control Operators]
+   MatMulInteger            : 0     -> 61    (Delta: +61)
+   DynamicQuantizeLinear    : 0     -> 38    (Delta: +38)
+   QLinearMatMul            : 0     -> 0     (Delta: +0)
+   QuantizeLinear           : 0     -> 0     (Delta: +0)
+   DequantizeLinear         : 0     -> 2     (Delta: +2)
+   QLinearConv              : 0     -> 0     (Delta: +0)
+
+ [Graph Structural Changes (Suppressed Identical Ops)]
+ * Cast                     : 3     -> 64    (Delta: +61)
+ * MatMul                   : 73    -> 12    (Delta: -61)
+ * Mul                      : 2     -> 124   (Delta: +122)
+
+
+===========================================================================
+ A/B Diagnostic Analysis: Decoder (With Past)
+ FP32 Source : models\onnx\opus_mt_de_en_opt_extended\decoder_with_past_model.onnx
+ INT8 Target : models\onnx\opus_mt_de_en_opt_extended_int8\decoder_with_past_model.onnx
+===========================================================================
+
+--- 1. File Size & Macro Structural Changes ---
+ File Size (MB)       : 312.49 MB -> 78.61 MB (-233.88 MB)
+ External Tensor Data : No -> No
+ Total Nodes          : 496 -> 682
+ Total Initializers   : 161 -> 263
+
+--- 2. Weight Element Quantization Distribution ---
+ Total Weight Elements: 81,888,038 -> 81,888,140
+ Observed INT8 Elements: 81,777,715 / 81,888,140
+ Observed INT8 Ratio  : 99.87%
+
+--- 3. Initializer Type & Element Breakdown ---
+ FLOAT (32-bit)   | Tensors: 140  -> 140  | Elements:   81,887,993 ->      110,380
+ INT64            | Tensors: 21   -> 21   | Elements:           45 ->           45
+ UINT8            | Tensors: 0    -> 102  | Elements:            0 ->   81,777,715
+
+--- 4. Operator Deltas (Quantization & Changed Ops Only) ---
+ [Quantization Control Operators]
+   MatMulInteger            : 0     -> 49    (Delta: +49)
+   DynamicQuantizeLinear    : 0     -> 37    (Delta: +37)
+   QLinearMatMul            : 0     -> 0     (Delta: +0)
+   QuantizeLinear           : 0     -> 0     (Delta: +0)
+   DequantizeLinear         : 0     -> 2     (Delta: +2)
+   QLinearConv              : 0     -> 0     (Delta: +0)
+
+ [Graph Structural Changes (Suppressed Identical Ops)]
+ * Cast                     : 3     -> 52    (Delta: +49)
+ * MatMul                   : 61    -> 12    (Delta: -49)
+ * Mul                      : 2     -> 100   (Delta: +98)

@@ -1,0 +1,46 @@
+
+===========================================================================
+ A/B Diagnostic Analysis: Encoder
+ FP32 Source : models\onnx\opus_mt_de_en_opt_extended\encoder_model.onnx
+ INT8 Target : models\onnx\opus_mt_de_en_opt_extended_int8\encoder_model.onnx
+===========================================================================
+
+--- 1. File Size & Macro Structural Changes ---
+ File Size (MB)       : 186.68 MB -> 47.62 MB (-139.06 MB)
+ External Tensor Data : No -> No
+ Total Nodes          : 272 -> 405
+ Total Initializers   : 121 -> 195
+
+--- 2. Weight Element Quantization Distribution ---
+ Total Weight Elements: 48,924,208 -> 48,924,282
+ Observed INT8 Elements: 48,622,117 / 48,924,282
+ Observed INT8 Ratio  : 99.38%
+
+--- 3. Initializer Type & Element Breakdown ---
+ FLOAT (32-bit)   | Tensors: 101  -> 101  | Elements:   48,924,163 ->      302,120
+ INT64            | Tensors: 20   -> 20   | Elements:           45 ->           45
+ UINT8            | Tensors: 0    -> 74   | Elements:            0 ->   48,622,117
+
+--- 4. Operator Deltas (Quantization & Changed Ops Only) ---
+ [Quantization Control Operators]
+   MatMulInteger            : 0     -> 36    (Delta: +36)
+   DynamicQuantizeLinear    : 0     -> 24    (Delta: +24)
+   QLinearMatMul            : 0     -> 0     (Delta: +0)
+   QuantizeLinear           : 0     -> 0     (Delta: +0)
+   DequantizeLinear         : 0     -> 1     (Delta: +1)
+   QLinearConv              : 0     -> 0     (Delta: +0)
+
+ [Graph Structural Changes (Suppressed Identical Ops)]
+ * Cast                     : 2     -> 38    (Delta: +36)
+ * MatMul                   : 42    -> 6     (Delta: -36)
+ * Mul                      : 1     -> 73    (Delta: +72)
+
+
+===========================================================================
+ A/B Diagnostic Analysis: Decoder (Merged)
+ FP32 Source : models\onnx\opus_mt_de_en_opt_extended\decoder_model_merged.onnx
+ INT8 Target : models\onnx\opus_mt_de_en_opt_extended_int8\decoder_model_merged.onnx
+===========================================================================
+
+[ERROR] Analysis failed for one or both models.
+  INT8 Error: File not found

@@ -92,8 +92,9 @@ def log_experiment_provenance(logger: logging.Logger) -> None:
     logger.info("-----------------------------")
 
 
-def get_translator(model_name: str) -> BaseTranslator:
-    """Factory to instantiate the requested translator architecture."""
+def get_translator(model_name: str, **kwargs) -> BaseTranslator:
+    """Factory to instantiate the requested translator architecture.
+    Transparently forwards kwargs only to architectures that support them."""
     name = model_name.lower()
     try:
         if name == "marian":
@@ -101,11 +102,13 @@ def get_translator(model_name: str) -> BaseTranslator:
         elif name == "m2m100":
             return M2M100Translator()
         elif name == "marian_onnx":                            
+            return MarianONNXTranslator(**kwargs)
+        # Additive: Support custom ONNX paths without breaking the default
+            if onnx_model_dir is not None:
+                return MarianONNXTranslator(onnx_model_dir=str(onnx_model_dir))
             return MarianONNXTranslator()
         else:
             raise BenchmarkError(f"Unknown model architecture requested: {model_name}")
-    # Wrap ONLY expected infrastructure failures (e.g., missing weights, CUDA out of memory).
-    # Programming bugs (TypeError, AttributeError) will deliberately bypass this and crash fast.
     except (OSError, RuntimeError, FileNotFoundError) as e:
         raise BenchmarkError(f"Failed to load {model_name} backend: {e}") from e
 
@@ -159,6 +162,7 @@ def run_benchmark(
     model_name: str,
     dataset_name: str,
     limit: int | None = None,
+    onnx_variant: str | None = None,
 ) -> None:
     """
     Executes the offline benchmark pipeline with strict crash recovery, 
@@ -175,11 +179,18 @@ def run_benchmark(
     logger.info("Run started at: %s", start_timestamp)
     log_experiment_provenance(logger)
 
+    translator_kwargs: dict[str, Path | str] = {}
+    if model_name.lower() == "marian_onnx" and onnx_variant:
+        translator_kwargs["onnx_model_dir"] = (
+            ProjectConfig.MODEL_DIR / "onnx" / onnx_variant
+        )
+
+
     # 1. Initialization (Surgically timing the model load)
     logger.info("Initializing translation engine: %s...", model_name)
     load_start_time = time.perf_counter()
 
-    translator = get_translator(model_name)
+    translator = get_translator(model_name, **translator_kwargs)
     translator.load()
 
     if hasattr(translator, "warm_up"):
@@ -198,6 +209,15 @@ def run_benchmark(
 
     dataset_stem = Path(dataset_name).stem
     experiment_id = f"{cached_model_name}_{dataset_stem}"
+
+    if onnx_variant:
+        experiment_id = f"{cached_model_name}_{onnx_variant}_{dataset_stem}"
+
+    manager = CheckpointManager(
+        model_identifier=experiment_id,
+        output_dir=results_folder,
+        checkpoint_interval=25,
+    )
 
     manager = CheckpointManager(
         model_identifier=experiment_id,
@@ -372,14 +392,16 @@ def main() -> None:
     parser.add_argument("--model", type=str, required=True, choices=["marian", "m2m100", "marian_onnx"])
     parser.add_argument("--dataset", type=str, default="benchmark_subset_100.parquet")
     parser.add_argument("--limit", type=int, help="Limit the number of samples to process.")
-    
+    parser.add_argument("--onnx-variant", type=str, default=None, help="ONNX model subdirectory")
+
     args = parser.parse_args()
     
     try:
         run_benchmark(
             model_name=args.model, 
             dataset_name=args.dataset, 
-            limit=args.limit
+            limit=args.limit,
+            onnx_variant=args.onnx_variant
         )
     except KeyboardInterrupt:
         logger.warning("\nRun interrupted by user (Ctrl+C). Checkpoint manager has secured progress. Exiting gracefully.")

@@ -41,4 +41,5 @@ evaluation_reports/
 
 results/
 
-models/
+models/"*.data" 
+"*.onnx" 

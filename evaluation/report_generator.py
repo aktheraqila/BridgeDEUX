@@ -82,6 +82,8 @@ class ReportGenerator:
         for evaluation in evaluations:
 
             row = {
+                "experiment_name": evaluation.experiment_name,
+
                 "model_name":
                     evaluation.model_name,
 

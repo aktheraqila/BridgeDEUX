@@ -106,7 +106,7 @@ def get_asr_model(model_name: str) -> BaseASR:
         raise BenchmarkError(f"Failed to load {model_name} backend: {e}") from e
 
 
-def get_translator(model_name: str) -> BaseTranslator:
+def get_translator(model_name: str, onnx_model_dir: Path | str | None = None) -> BaseTranslator:
     """Factory to instantiate the requested translator architecture."""
     name = model_name.lower()
     try:
@@ -114,6 +114,11 @@ def get_translator(model_name: str) -> BaseTranslator:
             return MarianTranslator()
         elif name == "m2m100":
             return M2M100Translator()
+        elif name == "marian_onnx":
+            from models.translators.marian_onnx import MarianONNXTranslator
+            if onnx_model_dir is not None:
+                return MarianONNXTranslator(onnx_model_dir=str(onnx_model_dir))
+            return MarianONNXTranslator()
         else:
             raise BenchmarkError(f"Unknown model architecture requested: {model_name}")
     except (OSError, RuntimeError, FileNotFoundError) as e:
@@ -169,6 +174,7 @@ def run_speech_translation_benchmark(
     mt_model_name: str,
     split_name: str,
     limit: int | None = None,
+    onnx_variant: str | None = None,
 ) -> None:
     """Executes the complete offline speech translation pipeline workload."""
     logger = BridgeLogger.get_logger("SpeechTranslationBenchmarkRunner")
@@ -188,9 +194,20 @@ def run_speech_translation_benchmark(
     asr_model = get_asr_model(asr_model_name)
     asr_model.load()
 
+    translator_kwargs = {}
+    if mt_model_name.lower() == "marian_onnx" and onnx_variant:
+        onnx_path = ProjectConfig.MODEL_DIR / "onnx" / onnx_variant
+        if not onnx_path.exists():
+            raise BenchmarkError(f"Specified ONNX directory not found: {onnx_path}")
+        translator_kwargs["onnx_model_dir"] = onnx_path
+
     logger.info("Initializing MT engine: %s...", mt_model_name)
-    translator = get_translator(mt_model_name)
+    #translator = get_translator(mt_model_name)
+    translator = get_translator(mt_model_name, **translator_kwargs)
     translator.load()
+
+    if hasattr(translator, "warm_up"):
+        translator.warm_up()
 
     load_time_seconds = time.perf_counter() - load_start_time
     logger.info("Total models load time: %.2f seconds", load_time_seconds)
@@ -203,6 +220,9 @@ def run_speech_translation_benchmark(
     results_folder.mkdir(exist_ok=True)
 
     experiment_id = f"cascaded_{cached_asr_name}_{cached_mt_name}_{split_name}"
+
+    if onnx_variant:
+        experiment_id = f"cascaded_{cached_asr_name}_{cached_mt_name}_{onnx_variant}_{split_name}"
 
     manager = CheckpointManager(
         model_identifier=experiment_id,
@@ -346,8 +366,12 @@ def run_speech_translation_benchmark(
         except Exception as e:
             logger.warning("Non-fatal error during ASR backend teardown: %s", e)
             
+        # CHANGE THIS BLOCK:
         try:
-            translator.close()
+            if hasattr(translator, "unload"):
+                translator.unload()
+            elif hasattr(translator, "close"):
+                translator.close()
         except Exception as e:
             logger.warning("Non-fatal error during MT backend teardown: %s", e)
             
@@ -383,10 +407,12 @@ def main() -> None:
     
     parser = argparse.ArgumentParser(description="Run BridgeDEUX offline Speech Translation benchmark.")
     parser.add_argument("--model", type=str, required=True, choices=["whisper", "vosk"], help="ASR model to use.")
-    parser.add_argument("--mt", type=str, required=True, choices=["marian", "m2m100"], help="Translation model to use.")
+    #parser.add_argument("--mt", type=str, required=True, choices=["marian", "m2m100"], help="Translation model to use.")
+    parser.add_argument("--mt", type=str, required=True, choices=["marian", "m2m100", "marian_onnx"], help="Translation model to use.")
     parser.add_argument("--split", type=str, default="test", help="Dataset split to evaluate via CoVoSTProvider.")
     parser.add_argument("--limit", type=int, help="Limit the number of samples to process.")
-    
+    parser.add_argument("--onnx-variant", type=str, default=None, help="ONNX model subdirectory")
+
     args = parser.parse_args()
 
     try:
@@ -394,7 +420,8 @@ def main() -> None:
             asr_model_name=args.model, 
             mt_model_name=args.mt,
             split_name=args.split, 
-            limit=args.limit
+            limit=args.limit,
+            onnx_variant=args.onnx_variant
         )
     except KeyboardInterrupt:
         logger.warning("\nRun explicitly interrupted by user. Saving WAL checkpoint logs. Exiting.")

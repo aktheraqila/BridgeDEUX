@@ -75,6 +75,9 @@ class ProjectConfig:
 
     EXPERIMENT_DIR: Path = PROJECT_ROOT / "experiments"
 
+    RESULTS_DIR: Path = PROJECT_ROOT / "results"
+
+
     # ------------------------------------------------------------------
     # Downloader
     # ------------------------------------------------------------------
@@ -141,6 +144,8 @@ class ProjectConfig:
             cls.ANDROID_DIR,
 
             cls.EXPERIMENT_DIR,
+
+            cls.RESULTS_DIR,
 
         ]
 

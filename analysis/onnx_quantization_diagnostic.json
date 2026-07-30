@@ -1,0 +1,120 @@
+{
+    "encoder": {
+        "component": "Encoder",
+        "fp32_model": {
+            "status": "success",
+            "file_size_mb": 186.68,
+            "has_external_data": false,
+            "ir_version": 8,
+            "opsets": "ai.onnx v18, com.microsoft.nchwc v1, ai.onnx.ml v5, ai.onnx.training v1, ai.onnx.preview.training v1, com.microsoft v1, com.microsoft.experimental v1, org.pytorch.aten v1",
+            "total_nodes": 272,
+            "total_initializers": 121,
+            "total_elements": 48924208,
+            "quantized_elements": 0,
+            "int8_ratio": 0.0,
+            "op_counts": {
+                "Unsqueeze": 25,
+                "Shape": 14,
+                "Gather": 28,
+                "Slice": 7,
+                "Reshape": 26,
+                "Mul": 1,
+                "Add": 55,
+                "Concat": 13,
+                "MatMul": 42,
+                "Transpose": 24,
+                "FusedMatMul": 6,
+                "Equal": 1,
+                "Where": 2,
+                "Expand": 1,
+                "Cast": 2,
+                "Sub": 1,
+                "Softmax": 6,
+                "LayerNormalization": 12,
+                "QuickGelu": 6
+            },
+            "init_type_counts": {
+                "FLOAT (32-bit)": 101,
+                "INT64": 20
+            },
+            "init_element_counts": {
+                "FLOAT (32-bit)": 48924163,
+                "INT64": 45
+            }
+        },
+        "int8_model": {
+            "status": "success",
+            "file_size_mb": 47.62,
+            "has_external_data": false,
+            "ir_version": 8,
+            "opsets": "ai.onnx v18, com.microsoft.nchwc v1, ai.onnx.ml v5, ai.onnx.training v1, ai.onnx.preview.training v1, com.microsoft v1, com.microsoft.experimental v1, org.pytorch.aten v1",
+            "total_nodes": 405,
+            "total_initializers": 195,
+            "total_elements": 48924282,
+            "quantized_elements": 48622117,
+            "int8_ratio": 99.38,
+            "op_counts": {
+                "Unsqueeze": 25,
+                "Shape": 14,
+                "Reshape": 26,
+                "Gather": 28,
+                "DequantizeLinear": 1,
+                "Concat": 13,
+                "Slice": 7,
+                "Mul": 73,
+                "Add": 55,
+                "Equal": 1,
+                "DynamicQuantizeLinear": 24,
+                "Where": 2,
+                "MatMulInteger": 36,
+                "Expand": 1,
+                "Cast": 38,
+                "Sub": 1,
+                "Transpose": 24,
+                "FusedMatMul": 6,
+                "Softmax": 6,
+                "MatMul": 6,
+                "LayerNormalization": 12,
+                "QuickGelu": 6
+            },
+            "init_type_counts": {
+                "FLOAT (32-bit)": 101,
+                "INT64": 20,
+                "UINT8": 74
+            },
+            "init_element_counts": {
+                "FLOAT (32-bit)": 302120,
+                "INT64": 45,
+                "UINT8": 48622117
+            }
+        }
+    },
+    "decoder": {
+        "component": "Decoder (Merged)",
+        "fp32_model": {
+            "status": "success",
+            "file_size_mb": 438.18,
+            "has_external_data": false,
+            "ir_version": 9,
+            "opsets": "ai.onnx v18, com.microsoft.nchwc v1, ai.onnx.ml v5, ai.onnx.training v1, ai.onnx.preview.training v1, com.microsoft v1, com.microsoft.experimental v1, org.pytorch.aten v1",
+            "total_nodes": 1,
+            "total_initializers": 159,
+            "total_elements": 55292149,
+            "quantized_elements": 0,
+            "int8_ratio": 0.0,
+            "op_counts": {
+                "If": 1
+            },
+            "init_type_counts": {
+                "FLOAT (32-bit)": 159
+            },
+            "init_element_counts": {
+                "FLOAT (32-bit)": 55292149
+            }
+        },
+        "int8_model": {
+            "status": "error",
+            "error_message": "File not found"
+        }
+    }
+}
