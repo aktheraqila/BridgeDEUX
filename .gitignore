@@ -30,3 +30,17 @@ project_tree.txt
 
 # Generated manifests
 datasets/reports/*.json
+
+# Android / Gradle
+
+.gradle/
+**/build/
+
+# Android Studio / IntelliJ
+*.iml
+
+# Local Android SDK configuration
+local.properties
+
+# Kotlin
+.kotlin/
