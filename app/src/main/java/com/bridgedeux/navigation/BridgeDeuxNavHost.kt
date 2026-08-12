@@ -34,9 +34,6 @@ fun BridgeDeuxNavHost(
         composable(Destination.Translate.route) {
 
             val translationViewModel: TranslationViewModel = viewModel(
-//                factory = translationViewModelFactory(
-//                    appContainer.translateTextUseCase
-//                )
                 factory = appContainer.translationViewModelFactory
             )
 
@@ -48,9 +45,6 @@ fun BridgeDeuxNavHost(
         composable(Destination.History.route) {
 
             val historyViewModel: HistoryViewModel = viewModel(
-//                factory = historyViewModelFactory(
-//                    appContainer.getHistoryUseCase
-//                )
                 factory = appContainer.historyViewModelFactory
             )
 
@@ -58,20 +52,6 @@ fun BridgeDeuxNavHost(
                 viewModel = historyViewModel
             )
         }
-
-//        composable(Destination.Settings.route) {
-//            Text("Settings (Coming Soon)")
-//        }
-
-//        composable(Destination.Settings.route) {
-//            val settingsViewModel: SettingsViewModel = viewModel(
-//                factory = appContainer.settingsViewModelFactory
-//            )
-//
-//            SettingsRoute(
-//                viewModel = settingsViewModel
-//            )
-//        }
 
         composable(Destination.Settings.route) {
 
