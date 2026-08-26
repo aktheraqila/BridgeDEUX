@@ -1,45 +1,73 @@
-# Python
+# ==============================================================================
+# Python & Environments
+# ==============================================================================
+.venv/
+.venv*/
 venv/
+env/
 __pycache__/
 *.py[cod]
+*$py.class
+.pytest_cache/
 
-# Hugging Face
+# ==============================================================================
+# Model Weights & Compiled Binaries (CRITICAL: >100MB Hard Blocks)
+# ==============================================================================
+*.gguf
+*.nemo
+*.bin
+whisper.cpp/
+*.onnx
+*.data
+*.pt
+*.pth
+*.safetensors
+models/parakeet/
+models/whisper/*.bin
+models/onnx/**/*.onnx
+models/onnx/**/*.data
+
+# Binaries & Shared Libraries
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.obj
+
+# ==============================================================================
+# Datasets, Raw Audio & Caches
+# ==============================================================================
 .cache/
+datasets/raw/
 datasets/cache/
+*.parquet
+*.tsv
+*.wav
+*.mp3
+*.flac
+*.snt
+*.tar.gz
+*.zip
 
-# Logs
+# ==============================================================================
+# Benchmark Outputs & Intermediate Logs
+# ==============================================================================
+results/
+benchmarks/*.parquet
+evaluation_reports/
+datasets/reports/*.json
+*.jsonl
+*.jsonl.bak
 *.log
+*.tmp
 
-# IDE
+# ==============================================================================
+# IDE & System Files
+# ==============================================================================
 .vscode/
 .idea/
-
-# OS
 Thumbs.db
 .DS_Store
-
-# Downloaded datasets
-datasets/raw/
-
-# Generated benchmark results
-benchmarks/*.parquet
-results/
-
-# Temporary files
 project_tree.txt
-
-# Generated manifests
-datasets/reports/*.json
-
-.venv311/
-
-__pycache__/
-
-*.pyc
-
-evaluation_reports/
-
-results/
-
-models/"*.data" 
-"*.onnx" 
+whisper.cpp/

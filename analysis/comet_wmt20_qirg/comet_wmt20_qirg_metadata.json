@@ -1,0 +1,9 @@
+{
+    "model_identifier": "comet_wmt20_qirg",
+    "schema_version": "1.0",
+    "checkpoint_format": "jsonl-v1",
+    "checkpoint_interval": 25,
+    "processed_samples": 13411,
+    "status": "completed",
+    "last_updated": "2026-08-17T21:34:02.314410+00:00"
+}

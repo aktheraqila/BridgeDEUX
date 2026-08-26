@@ -20,6 +20,8 @@ import random
 import subprocess
 import sys
 import time
+import re
+
 from datetime import datetime, timedelta
 from typing import Set
 
@@ -32,8 +34,6 @@ from bridge.logger import BridgeLogger
 from bridge.audio import AudioProcessor
 
 from models.asr.vosk import VoskASR
-from pathlib import Path
-from bridge.config import ProjectConfig
 
 from datasets.providers.covost_provider import CoVoSTProvider
 from benchmarks.checkpoint_manager import CheckpointManager
@@ -44,6 +44,8 @@ from benchmarks.exceptions import (
 )
 from models.asr.base_asr import BaseASR
 from models.asr.whisper_cpp import WhisperCppASR
+
+from models.asr.parakeet_cpp import ParakeetCppASR
 
 
 # --- Runner Configuration ---
@@ -88,6 +90,45 @@ def log_experiment_provenance(logger: logging.Logger) -> None:
     logger.info("-----------------------------")
 
 
+
+MSLT_TAG_PATTERN = re.compile(
+    r"<(?:SPN|NON|UNIN|LM|AS|SU|EU|UNSURE|NPS|MP)(?:/|>.*?</(?:LM|NPS|MP)>)",
+    flags=re.IGNORECASE,
+)
+
+MSLT_BRACKET_ANNOTATION_PATTERN = re.compile(
+    r"\[[^\]]*\]"
+)
+
+
+def normalize_mslt_t1(text: str) -> str:
+    """
+    Normalize MSLT T1 for ASR scoring.
+
+    Removes MSLT annotation tags, punctuation, and normalizes
+    whitespace/case while preserving the spoken lexical content.
+    """
+    import re
+    import unicodedata
+
+    text = str(text)
+
+    # Remove MSLT annotation tags:
+    # <SPN/>, <NON/>, <UNIN/>, etc.
+    text = re.sub(r"<[^>]*>", " ", text)
+
+    # Remove punctuation.
+    text = "".join(
+        char
+        for char in text
+        if not unicodedata.category(char).startswith("P")
+    )
+
+    # Normalize whitespace and case.
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip().lower()
+
 def get_asr_model(model_name: str) -> BaseASR:
     """Factory to instantiate the requested ASR architecture."""
     name = model_name.lower()
@@ -107,6 +148,24 @@ def get_asr_model(model_name: str) -> BaseASR:
             )
 
             return VoskASR(model_path)
+
+        elif name == "parakeet":
+            model_path = (
+                ProjectConfig.MODEL_DIR
+                / "parakeet"
+                / "tdt-0.6b-v3-f16.gguf"
+            )
+
+            executable_path = (
+                ProjectConfig.MODEL_DIR
+                / "parakeet"
+                / "parakeet-cli.exe"
+            )
+
+            return ParakeetCppASR(
+                model_path=model_path,
+                executable_path=executable_path,
+            )
 
         else:
             raise BenchmarkError(
@@ -165,11 +224,12 @@ class HardwareMonitor:
 
 def run_asr_benchmark(
     model_name: str,
+    dataset_name: str,
     split_name: str,
     limit: int | None = None,
 ) -> None:
     """
-    Executes the offline benchmark pipeline utilizing the CoVoSTProvider abstraction.
+    Executes the offline benchmark pipeline utilizing dynamic dataset providers.
     """
     logger = BridgeLogger.get_logger("ASRBenchmarkRunner")
     
@@ -197,7 +257,8 @@ def run_asr_benchmark(
     results_folder = Path("results")
     results_folder.mkdir(exist_ok=True)
 
-    experiment_id = f"{cached_model_name}_{split_name}"
+    # Prevent checkpoint collision between datasets
+    experiment_id = f"{cached_model_name}_{dataset_name}_{split_name}"
 
     manager = CheckpointManager(
         model_identifier=experiment_id,
@@ -209,9 +270,32 @@ def run_asr_benchmark(
     hw_monitor.start()
 
     try:
-        # 2. Dataset Loading via Provider Abstraction
-        logger.info("Initializing CoVoSTProvider for split: %s", split_name)
-        provider = CoVoSTProvider(split=split_name, include_audio=True)
+        # 2. Dataset Loading via Provider Factory Abstraction
+        logger.info("Initializing %s provider for split: %s", dataset_name.upper(), split_name)
+        if dataset_name.lower() == "mslt":
+            from datasets.providers.mslt_provider import MSLTProvider
+
+            provider = MSLTProvider(
+            split=split_name,
+            include_audio=True,
+            )
+
+        elif dataset_name.lower() == "mslt_asr":
+            from datasets.providers.mslt_asr_provider import MSLTASRProvider
+
+            provider = MSLTASRProvider(
+                split=split_name,
+                include_audio=True,
+                manifest_path=Path(
+                    "datasets/manifests/mslt_2190_eval_ids.txt"
+                ),
+            )
+
+        else:
+            provider = CoVoSTProvider(
+                split=split_name,
+                include_audio=True,
+            )
 
         # 3. State Recovery & O(1) Filtering
         completed_ids: Set[str] = manager.load_completed_samples()
@@ -242,11 +326,10 @@ def run_asr_benchmark(
             try:
                 # DSP Phase
                 start_dsp = time.perf_counter()
-                raw_array, sample_rate = AudioProcessor.decode_mp3_to_pcm(audio_bytes)
+                raw_array, sample_rate = AudioProcessor.decode_to_pcm(audio_bytes)
                 pcm_16k = AudioProcessor.resample_to_16k(raw_array, sample_rate)
                 dsp_time_ms = (time.perf_counter() - start_dsp) * 1000
 
-                # Inference Phase
                 # Inference Phase
                 result = asr_model.transcribe(pcm_16k)
                 
@@ -254,11 +337,31 @@ def run_asr_benchmark(
                 audio_duration_ms = (len(pcm_16k) / 16000) * 1000
 
                 # Evaluation metrics
-                reference_clean = source_text.lower().strip()
-                hypothesis_clean = result.transcription.lower().strip()
+                #reference_clean = source_text.lower().strip()
+                #hypothesis_clean = result.transcription.lower().strip()
 
-                sample_wer = wer(reference_clean, hypothesis_clean) if reference_clean and hypothesis_clean else 1.0
-                sample_cer = cer(reference_clean, hypothesis_clean) if reference_clean and hypothesis_clean else 1.0
+                #sample_wer = wer(reference_clean, hypothesis_clean) if reference_clean and hypothesis_clean else 1.0
+                #sample_cer = cer(reference_clean, hypothesis_clean) if reference_clean and hypothesis_clean else 1.0
+
+                reference_clean = normalize_mslt_t1(source_text)
+                #hypothesis_clean = result.transcription.lower().strip()
+                hypothesis_clean = normalize_mslt_t1(result.transcription)
+
+                if not reference_clean and not hypothesis_clean:
+                    sample_wer = 0.0
+                    sample_cer = 0.0
+
+                elif not reference_clean and hypothesis_clean:
+                    sample_wer = 1.0
+                    sample_cer = 1.0
+
+                elif reference_clean and not hypothesis_clean:
+                    sample_wer = 1.0
+                    sample_cer = 1.0
+
+                else:
+                    sample_wer = wer(reference_clean, hypothesis_clean)
+                    sample_cer = cer(reference_clean, hypothesis_clean)
 
                 # Calculate RTF (lower is better, < 1.0 means faster than real-time)
                 rtf = result.generation_time_ms / audio_duration_ms if audio_duration_ms > 0 else 0.0
@@ -341,39 +444,88 @@ def run_asr_benchmark(
     logger.info("-----------------------------")
 
 
+
 def main() -> None:
-    """CLI Entrypoint."""
+    """CLI entry point."""
     ProjectConfig.initialize()
     logger = BridgeLogger.get_logger("Main")
-    
-    parser = argparse.ArgumentParser(description="Run BridgeDEUX offline ASR benchmark.")
-    parser.add_argument("--model", type=str, required=True, choices=["whisper", "vosk"], help="ASR model to use.")
-    parser.add_argument("--split", type=str, default="test", help="Dataset split to evaluate via CoVoSTProvider.")
-    parser.add_argument("--limit", type=int, help="Limit the number of samples to process.")
-    
+
+    parser = argparse.ArgumentParser(
+        description="Run BridgeDEUX offline ASR benchmark."
+    )
+
+    parser.add_argument(
+        "--model",
+        type=str,
+        required=True,
+        choices=["whisper", "vosk", "parakeet"],
+        help="ASR model to use.",
+    )
+
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="covost",
+        choices=["covost", "mslt", "mslt_asr"],
+        help="Dataset to evaluate.",
+    )
+
+    parser.add_argument(
+        "--split",
+        type=str,
+        default="test",
+        help="Dataset split to evaluate.",
+    )
+
+    parser.add_argument(
+        "--limit",
+        type=int,
+        help="Limit the number of samples to process.",
+    )
+
     args = parser.parse_args()
 
-    
     try:
         run_asr_benchmark(
-            model_name=args.model, 
-            split_name=args.split, 
-            limit=args.limit
+            model_name=args.model,
+            dataset_name=args.dataset,
+            split_name=args.split,
+            limit=args.limit,
         )
+
     except KeyboardInterrupt:
-        logger.warning("\nRun interrupted by user. Checkpoint manager secured progress. Exiting.")
+        logger.warning(
+            "\nRun interrupted by user. "
+            "Checkpoint manager secured progress. Exiting."
+        )
         sys.exit(0)
+
     except CircuitBreakerError as e:
-        logger.critical("Benchmark Aborted by Safety Policy: %s", str(e))
+        logger.critical(
+            "Benchmark Aborted by Safety Policy: %s",
+            str(e),
+        )
         sys.exit(1)
+
     except CheckpointError as e:
-        logger.critical("Infrastructure I/O Aborted: %s", str(e))
+        logger.critical(
+            "Infrastructure I/O Aborted: %s",
+            str(e),
+        )
         sys.exit(1)
+
     except BenchmarkError as e:
-        logger.critical("Benchmark Initialization Error: %s", str(e))
+        logger.critical(
+            "Benchmark Initialization Error: %s",
+            str(e),
+        )
         sys.exit(1)
+
     except Exception as e:
-        logger.critical("Benchmark Aborted due to unhandled fatal error: %s", str(e))
+        logger.critical(
+            "Benchmark Aborted due to unhandled fatal error: %s",
+            str(e),
+        )
         sys.exit(1)
 
 

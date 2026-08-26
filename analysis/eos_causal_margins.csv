@@ -1,0 +1,2 @@
+sample_id,truncated_model,prefix_len,fp32_eos_logit,int8_eos_logit,fp32_best_non_eos_logit,int8_best_non_eos_logit,fp32_eos_margin,int8_eos_margin,margin_diff_abs,fp32_argmax_id,int8_argmax_id,margin_sign_flip
+common_voice_de_19161704,FP32,6,6.374650001525879,6.497828483581543,2.279036521911621,3.1307952404022217,4.095613479614258,3.3670332431793213,0.7285802364349365,0,0,False

@@ -1,0 +1,25 @@
+{
+    "timestamp": "2026-08-15T22:49:55.898218",
+    "experiment_step": "Step 2 - COMET Neural Metric Evaluation",
+    "comet_model": "Unbabel/wmt20-comet-da",
+    "comet_version": "2.2.7",
+    "python_version": "3.11.7",
+    "pytorch_version": "2.13.0+cpu",
+    "device": "CPU",
+    "batch_size": 16,
+    "random_seed": 42,
+    "total_valid_samples": 13511,
+    "exact_string_matches": 9851,
+    "divergent_scored": 3660,
+    "mean_chrf_delta_divergent": 0.22783693130377067,
+    "mean_comet_delta_divergent": -0.000936814649234134,
+    "spearman_rho": 0.6802509526903535,
+    "spearman_p_value": 0.0,
+    "spearman_bootstrap_95_ci": [
+        0.6603348471195546,
+        0.6997280414588869
+    ],
+    "source_parquet": "int8_seq_likelihood_exploratory_20260815_061304.parquet",
+    "fp32_jsonl_source": "marianmt-onnx_opus_mt_de_en_opt_extended_covost2_de_en_test_results_20260802_204633_269550.jsonl.bak",
+    "int8_jsonl_source": "marianmt-onnx_opus_mt_de_en_opt_extended_int8_covost2_de_en_test_results_20260807_101154_066233.jsonl.bak"
+}

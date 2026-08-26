@@ -1,0 +1,19 @@
+{
+    "experiment": {
+        "git_revision": "d4f2de08577c8dc1b5a2347649220bd019c4a149",
+        "timestamp": "2026-07-28T03:10:06.209713",
+        "status": "success"
+    },
+    "environment": {
+        "python_version": "3.11.7",
+        "onnxruntime_version": "1.27.0",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "hostname": "Aqila-Akther-1TSG2P6",
+        "execution_provider": "CPUExecutionProvider"
+    },
+    "execution": {
+        "source_dir": "models\\onnx\\opus_mt_de_en_opt_extended",
+        "target_dir": "models\\onnx\\opus_mt_de_en_opt_extended_int8",
+        "total_pipeline_time_s": 49.89
+    }
+}

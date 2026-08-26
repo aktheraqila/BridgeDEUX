@@ -1,0 +1,64 @@
+{
+    "graph_mode": "standard",
+    "preprocessing_mode": "never",
+    "graph_decisions": [
+        {
+            "graph": "encoder_model.onnx",
+            "status": "Success",
+            "preprocessing_mode": "never",
+            "shape_inference": "Disabled",
+            "quantized_from": "Original"
+        },
+        {
+            "graph": "decoder_model.onnx",
+            "status": "Success",
+            "preprocessing_mode": "never",
+            "shape_inference": "Disabled",
+            "quantized_from": "Original"
+        },
+        {
+            "graph": "decoder_with_past_model.onnx",
+            "status": "Success",
+            "preprocessing_mode": "never",
+            "shape_inference": "Disabled",
+            "quantized_from": "Original"
+        }
+    ],
+    "source_artifacts": [
+        {
+            "file": "encoder_model.onnx",
+            "sha256": "6fc4590625f50e686e7c6056dfce8785551e193013cc374ff1696666d7f41b14",
+            "size_mb": 186.68
+        },
+        {
+            "file": "decoder_model.onnx",
+            "sha256": "7db7d633432627e37958ccebbb98c58dc8d9f533889b48fabed21494e0af1175",
+            "size_mb": 324.52
+        },
+        {
+            "file": "decoder_with_past_model.onnx",
+            "sha256": "f084871837fb58fdd360083eefbc105ee760021b5d10e01a0641b02b1f4f01b9",
+            "size_mb": 312.49
+        }
+    ],
+    "copied_assets": [
+        "config.json",
+        "generation_config.json",
+        "source.spm",
+        "special_tokens_map.json",
+        "target.spm",
+        "tokenizer_config.json",
+        "vocab.json"
+    ],
+    "quantization_params": {
+        "weight_type": "QUInt8",
+        "per_channel": false,
+        "reduce_range": false,
+        "extra_options": {
+            "DefaultTensorType": 1,
+            "MatMulConstBOnly": true
+        }
+    },
+    "framework": "onnxruntime.quantization",
+    "onnxruntime_version": "1.27.0"
+}

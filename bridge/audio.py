@@ -14,7 +14,8 @@ class AudioProcessor:
     """
 
     @staticmethod
-    def decode_mp3_to_pcm(audio_bytes: bytes) -> tuple[np.ndarray, int]:
+    #def decode_mp3_to_pcm(audio_bytes: bytes) -> tuple[np.ndarray, int]:
+    def decode_to_pcm(audio_bytes: bytes) -> tuple[np.ndarray, int]:
         """
         Decodes raw MP3 binary data into a mono float32 NumPy array.
         """
