@@ -227,6 +227,8 @@ def run_asr_benchmark(
     dataset_name: str,
     split_name: str,
     limit: int | None = None,
+    manifest_path: Path | None = None,
+    experiment_id: str | None = None,
 ) -> None:
     """
     Executes the offline benchmark pipeline utilizing dynamic dataset providers.
@@ -258,8 +260,7 @@ def run_asr_benchmark(
     results_folder.mkdir(exist_ok=True)
 
     # Prevent checkpoint collision between datasets
-    experiment_id = f"{cached_model_name}_{dataset_name}_{split_name}"
-
+    experiment_id = experiment_id or f"{cached_model_name}_{dataset_name}_{split_name}"
     manager = CheckpointManager(
         model_identifier=experiment_id,
         output_dir=results_folder,

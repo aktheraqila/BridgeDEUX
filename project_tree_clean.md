@@ -2,107 +2,224 @@ BridgeDEUX/
 ├── analysis
 │   ├── comet_wmt20_qirg
 │   │   └── comet_wmt20_qirg_results_20260817_213402_313378.jsonl.bak
+│   ├── covost2_100_desktop
+│   │   ├── covost2_100_w1_desktop
+│   │   └── covost2_100_whisper_desktop
+│   ├── Mobile Benchmark Results
+│   │   ├── Student Model-20260830T205443Z-1-001
+│   │   │   └── Student Model
+│   │   │       ├── covost2
+│   │   │       └── mslt
+│   │   └── Whisper Model-20260830T205442Z-1-001
+│   │       └── Whisper Model
+│   │           ├── covost2
+│   │           └── mslt
 │   ├── mobile_benchmark_audio_100
-│   │   ├── common_voice_de_17325303.wav
-│   │   ├── common_voice_de_17328166.wav
-│   │   ├── common_voice_de_17334370.wav
-│   │   ├── common_voice_de_17385186.wav
-│   │   ├── common_voice_de_17448293.wav
-│   │   ├── common_voice_de_17505848.wav
-│   │   ├── common_voice_de_17526181.wav
-│   │   ├── common_voice_de_17586393.wav
-│   │   ├── common_voice_de_17655021.wav
-│   │   ├── common_voice_de_17762173.wav
-│   │   ├── common_voice_de_17812774.wav
-│   │   ├── common_voice_de_17815886.wav
-│   │   ├── common_voice_de_17818036.wav
-│   │   ├── common_voice_de_17826889.wav
-│   │   ├── common_voice_de_17834515.wav
-│   │   ├── common_voice_de_17886464.wav
-│   │   ├── common_voice_de_17922420.wav
-│   │   ├── common_voice_de_17929041.wav
-│   │   ├── common_voice_de_17929222.wav
-│   │   ├── common_voice_de_17943895.wav
-│   │   ├── common_voice_de_18016742.wav
-│   │   ├── common_voice_de_18139045.wav
-│   │   ├── common_voice_de_18159749.wav
-│   │   ├── common_voice_de_18197872.wav
-│   │   ├── common_voice_de_18201555.wav
-│   │   ├── common_voice_de_18202644.wav
-│   │   ├── common_voice_de_18204372.wav
-│   │   ├── common_voice_de_18205461.wav
-│   │   ├── common_voice_de_18205535.wav
-│   │   ├── common_voice_de_18207208.wav
-│   │   ├── common_voice_de_18207647.wav
-│   │   ├── common_voice_de_18208631.wav
-│   │   ├── common_voice_de_18209536.wav
-│   │   ├── common_voice_de_18210861.wav
-│   │   ├── common_voice_de_18213814.wav
-│   │   ├── common_voice_de_18216712.wav
-│   │   ├── common_voice_de_18218470.wav
-│   │   ├── common_voice_de_18226103.wav
-│   │   ├── common_voice_de_18226509.wav
-│   │   ├── common_voice_de_18226602.wav
-│   │   ├── common_voice_de_18280125.wav
-│   │   ├── common_voice_de_18373650.wav
-│   │   ├── common_voice_de_18436715.wav
-│   │   ├── common_voice_de_18445748.wav
-│   │   ├── common_voice_de_18520278.wav
-│   │   ├── common_voice_de_18593971.wav
-│   │   ├── common_voice_de_18637308.wav
-│   │   ├── common_voice_de_18781285.wav
-│   │   ├── common_voice_de_18820064.wav
-│   │   ├── common_voice_de_18982556.wav
-│   │   ├── common_voice_de_19059081.wav
-│   │   ├── common_voice_de_19096527.wav
-│   │   ├── common_voice_de_19119155.wav
-│   │   ├── common_voice_de_19119254.wav
-│   │   ├── common_voice_de_19120207.wav
-│   │   ├── common_voice_de_19121846.wav
-│   │   ├── common_voice_de_19121902.wav
-│   │   ├── common_voice_de_19124483.wav
-│   │   ├── common_voice_de_19125901.wav
-│   │   ├── common_voice_de_19128944.wav
-│   │   ├── common_voice_de_19140417.wav
-│   │   ├── common_voice_de_19152628.wav
-│   │   ├── common_voice_de_19155513.wav
-│   │   ├── common_voice_de_19156087.wav
-│   │   ├── common_voice_de_19163435.wav
-│   │   ├── common_voice_de_19163610.wav
-│   │   ├── common_voice_de_19164256.wav
-│   │   ├── common_voice_de_19166335.wav
-│   │   ├── common_voice_de_19275763.wav
-│   │   ├── common_voice_de_19298932.wav
-│   │   ├── common_voice_de_19505421.wav
-│   │   ├── common_voice_de_19534801.wav
-│   │   ├── common_voice_de_19542915.wav
-│   │   ├── common_voice_de_19579120.wav
-│   │   ├── common_voice_de_19588101.wav
-│   │   ├── common_voice_de_19597585.wav
-│   │   ├── common_voice_de_19600363.wav
-│   │   ├── common_voice_de_19600894.wav
-│   │   ├── common_voice_de_19607883.wav
-│   │   ├── common_voice_de_19612448.wav
-│   │   ├── common_voice_de_19616009.wav
-│   │   ├── common_voice_de_19617317.wav
-│   │   ├── common_voice_de_19618761.wav
-│   │   ├── common_voice_de_19622933.wav
-│   │   ├── common_voice_de_19625120.wav
-│   │   ├── common_voice_de_19628118.wav
-│   │   ├── common_voice_de_19649452.wav
-│   │   ├── common_voice_de_19669138.wav
-│   │   ├── common_voice_de_19678060.wav
-│   │   ├── common_voice_de_19682423.wav
-│   │   ├── common_voice_de_19714269.wav
-│   │   ├── common_voice_de_19728810.wav
-│   │   ├── common_voice_de_19740814.wav
-│   │   ├── common_voice_de_19746364.wav
-│   │   ├── common_voice_de_19754865.wav
-│   │   ├── common_voice_de_19756404.wav
-│   │   ├── common_voice_de_19856683.wav
-│   │   ├── common_voice_de_19941265.wav
-│   │   ├── common_voice_de_19948105.wav
-│   │   └── common_voice_de_19955213.wav
+│   │   ├── covost2
+│   │   │   ├── common_voice_de_17325303.wav
+│   │   │   ├── common_voice_de_17328166.wav
+│   │   │   ├── common_voice_de_17334370.wav
+│   │   │   ├── common_voice_de_17385186.wav
+│   │   │   ├── common_voice_de_17448293.wav
+│   │   │   ├── common_voice_de_17505848.wav
+│   │   │   ├── common_voice_de_17526181.wav
+│   │   │   ├── common_voice_de_17586393.wav
+│   │   │   ├── common_voice_de_17655021.wav
+│   │   │   ├── common_voice_de_17762173.wav
+│   │   │   ├── common_voice_de_17812774.wav
+│   │   │   ├── common_voice_de_17815886.wav
+│   │   │   ├── common_voice_de_17818036.wav
+│   │   │   ├── common_voice_de_17826889.wav
+│   │   │   ├── common_voice_de_17834515.wav
+│   │   │   ├── common_voice_de_17886464.wav
+│   │   │   ├── common_voice_de_17922420.wav
+│   │   │   ├── common_voice_de_17929041.wav
+│   │   │   ├── common_voice_de_17929222.wav
+│   │   │   ├── common_voice_de_17943895.wav
+│   │   │   ├── common_voice_de_18016742.wav
+│   │   │   ├── common_voice_de_18139045.wav
+│   │   │   ├── common_voice_de_18159749.wav
+│   │   │   ├── common_voice_de_18197872.wav
+│   │   │   ├── common_voice_de_18201555.wav
+│   │   │   ├── common_voice_de_18202644.wav
+│   │   │   ├── common_voice_de_18204372.wav
+│   │   │   ├── common_voice_de_18205461.wav
+│   │   │   ├── common_voice_de_18205535.wav
+│   │   │   ├── common_voice_de_18207208.wav
+│   │   │   ├── common_voice_de_18207647.wav
+│   │   │   ├── common_voice_de_18208631.wav
+│   │   │   ├── common_voice_de_18209536.wav
+│   │   │   ├── common_voice_de_18210861.wav
+│   │   │   ├── common_voice_de_18213814.wav
+│   │   │   ├── common_voice_de_18216712.wav
+│   │   │   ├── common_voice_de_18218470.wav
+│   │   │   ├── common_voice_de_18226103.wav
+│   │   │   ├── common_voice_de_18226509.wav
+│   │   │   ├── common_voice_de_18226602.wav
+│   │   │   ├── common_voice_de_18280125.wav
+│   │   │   ├── common_voice_de_18373650.wav
+│   │   │   ├── common_voice_de_18436715.wav
+│   │   │   ├── common_voice_de_18445748.wav
+│   │   │   ├── common_voice_de_18520278.wav
+│   │   │   ├── common_voice_de_18593971.wav
+│   │   │   ├── common_voice_de_18637308.wav
+│   │   │   ├── common_voice_de_18781285.wav
+│   │   │   ├── common_voice_de_18820064.wav
+│   │   │   ├── common_voice_de_18982556.wav
+│   │   │   ├── common_voice_de_19059081.wav
+│   │   │   ├── common_voice_de_19096527.wav
+│   │   │   ├── common_voice_de_19119155.wav
+│   │   │   ├── common_voice_de_19119254.wav
+│   │   │   ├── common_voice_de_19120207.wav
+│   │   │   ├── common_voice_de_19121846.wav
+│   │   │   ├── common_voice_de_19121902.wav
+│   │   │   ├── common_voice_de_19124483.wav
+│   │   │   ├── common_voice_de_19125901.wav
+│   │   │   ├── common_voice_de_19128944.wav
+│   │   │   ├── common_voice_de_19140417.wav
+│   │   │   ├── common_voice_de_19152628.wav
+│   │   │   ├── common_voice_de_19155513.wav
+│   │   │   ├── common_voice_de_19156087.wav
+│   │   │   ├── common_voice_de_19163435.wav
+│   │   │   ├── common_voice_de_19163610.wav
+│   │   │   ├── common_voice_de_19164256.wav
+│   │   │   ├── common_voice_de_19166335.wav
+│   │   │   ├── common_voice_de_19275763.wav
+│   │   │   ├── common_voice_de_19298932.wav
+│   │   │   ├── common_voice_de_19505421.wav
+│   │   │   ├── common_voice_de_19534801.wav
+│   │   │   ├── common_voice_de_19542915.wav
+│   │   │   ├── common_voice_de_19579120.wav
+│   │   │   ├── common_voice_de_19588101.wav
+│   │   │   ├── common_voice_de_19597585.wav
+│   │   │   ├── common_voice_de_19600363.wav
+│   │   │   ├── common_voice_de_19600894.wav
+│   │   │   ├── common_voice_de_19607883.wav
+│   │   │   ├── common_voice_de_19612448.wav
+│   │   │   ├── common_voice_de_19616009.wav
+│   │   │   ├── common_voice_de_19617317.wav
+│   │   │   ├── common_voice_de_19618761.wav
+│   │   │   ├── common_voice_de_19622933.wav
+│   │   │   ├── common_voice_de_19625120.wav
+│   │   │   ├── common_voice_de_19628118.wav
+│   │   │   ├── common_voice_de_19649452.wav
+│   │   │   ├── common_voice_de_19669138.wav
+│   │   │   ├── common_voice_de_19678060.wav
+│   │   │   ├── common_voice_de_19682423.wav
+│   │   │   ├── common_voice_de_19714269.wav
+│   │   │   ├── common_voice_de_19728810.wav
+│   │   │   ├── common_voice_de_19740814.wav
+│   │   │   ├── common_voice_de_19746364.wav
+│   │   │   ├── common_voice_de_19754865.wav
+│   │   │   ├── common_voice_de_19756404.wav
+│   │   │   ├── common_voice_de_19856683.wav
+│   │   │   ├── common_voice_de_19941265.wav
+│   │   │   ├── common_voice_de_19948105.wav
+│   │   │   └── common_voice_de_19955213.wav
+│   │   └── mslt
+│   │       ├── MSLT_Test_DE_0027.T0.de.wav
+│   │       ├── MSLT_Test_DE_0107.T0.de.wav
+│   │       ├── MSLT_Test_DE_0113.T0.de.wav
+│   │       ├── MSLT_Test_DE_0128.T0.de.wav
+│   │       ├── MSLT_Test_DE_0137.T0.de.wav
+│   │       ├── MSLT_Test_DE_0138.T0.de.wav
+│   │       ├── MSLT_Test_DE_0186.T0.de.wav
+│   │       ├── MSLT_Test_DE_0196.T0.de.wav
+│   │       ├── MSLT_Test_DE_0201.T0.de.wav
+│   │       ├── MSLT_Test_DE_0239.T0.de.wav
+│   │       ├── MSLT_Test_DE_0271.T0.de.wav
+│   │       ├── MSLT_Test_DE_0282.T0.de.wav
+│   │       ├── MSLT_Test_DE_0295.T0.de.wav
+│   │       ├── MSLT_Test_DE_0303.T0.de.wav
+│   │       ├── MSLT_Test_DE_0335.T0.de.wav
+│   │       ├── MSLT_Test_DE_0340.T0.de.wav
+│   │       ├── MSLT_Test_DE_0370.T0.de.wav
+│   │       ├── MSLT_Test_DE_0388.T0.de.wav
+│   │       ├── MSLT_Test_DE_0395.T0.de.wav
+│   │       ├── MSLT_Test_DE_0399.T0.de.wav
+│   │       ├── MSLT_Test_DE_0413.T0.de.wav
+│   │       ├── MSLT_Test_DE_0433.T0.de.wav
+│   │       ├── MSLT_Test_DE_0442.T0.de.wav
+│   │       ├── MSLT_Test_DE_0443.T0.de.wav
+│   │       ├── MSLT_Test_DE_0480.T0.de.wav
+│   │       ├── MSLT_Test_DE_0487.T0.de.wav
+│   │       ├── MSLT_Test_DE_0542.T0.de.wav
+│   │       ├── MSLT_Test_DE_0598.T0.de.wav
+│   │       ├── MSLT_Test_DE_0603.T0.de.wav
+│   │       ├── MSLT_Test_DE_0617.T0.de.wav
+│   │       ├── MSLT_Test_DE_0658.T0.de.wav
+│   │       ├── MSLT_Test_DE_0668.T0.de.wav
+│   │       ├── MSLT_Test_DE_0685.T0.de.wav
+│   │       ├── MSLT_Test_DE_0687.T0.de.wav
+│   │       ├── MSLT_Test_DE_0698.T0.de.wav
+│   │       ├── MSLT_Test_DE_0701.T0.de.wav
+│   │       ├── MSLT_Test_DE_0736.T0.de.wav
+│   │       ├── MSLT_Test_DE_0828.T0.de.wav
+│   │       ├── MSLT_Test_DE_0856.T0.de.wav
+│   │       ├── MSLT_Test_DE_0902.T0.de.wav
+│   │       ├── MSLT_Test_DE_0908.T0.de.wav
+│   │       ├── MSLT_Test_DE_0914.T0.de.wav
+│   │       ├── MSLT_Test_DE_0925.T0.de.wav
+│   │       ├── MSLT_Test_DE_0939.T0.de.wav
+│   │       ├── MSLT_Test_DE_0942.T0.de.wav
+│   │       ├── MSLT_Test_DE_0943.T0.de.wav
+│   │       ├── MSLT_Test_DE_0946.T0.de.wav
+│   │       ├── MSLT_Test_DE_0958.T0.de.wav
+│   │       ├── MSLT_Test_DE_0977.T0.de.wav
+│   │       ├── MSLT_Test_DE_0982.T0.de.wav
+│   │       ├── MSLT_Test_DE_0996.T0.de.wav
+│   │       ├── MSLT_Test_DE_0997.T0.de.wav
+│   │       ├── MSLT_Test_DE_1046.T0.de.wav
+│   │       ├── MSLT_Test_DE_1047.T0.de.wav
+│   │       ├── MSLT_Test_DE_1054.T0.de.wav
+│   │       ├── MSLT_Test_DE_1124.T0.de.wav
+│   │       ├── MSLT_Test_DE_1132.T0.de.wav
+│   │       ├── MSLT_Test_DE_1133.T0.de.wav
+│   │       ├── MSLT_Test_DE_1142.T0.de.wav
+│   │       ├── MSLT_Test_DE_1145.T0.de.wav
+│   │       ├── MSLT_Test_DE_1154.T0.de.wav
+│   │       ├── MSLT_Test_DE_1175.T0.de.wav
+│   │       ├── MSLT_Test_DE_1187.T0.de.wav
+│   │       ├── MSLT_Test_DE_1188.T0.de.wav
+│   │       ├── MSLT_Test_DE_1235.T0.de.wav
+│   │       ├── MSLT_Test_DE_1252.T0.de.wav
+│   │       ├── MSLT_Test_DE_1343.T0.de.wav
+│   │       ├── MSLT_Test_DE_1347.T0.de.wav
+│   │       ├── MSLT_Test_DE_1385.T0.de.wav
+│   │       ├── MSLT_Test_DE_1438.T0.de.wav
+│   │       ├── MSLT_Test_DE_1453.T0.de.wav
+│   │       ├── MSLT_Test_DE_1469.T0.de.wav
+│   │       ├── MSLT_Test_DE_1517.T0.de.wav
+│   │       ├── MSLT_Test_DE_1535.T0.de.wav
+│   │       ├── MSLT_Test_DE_1547.T0.de.wav
+│   │       ├── MSLT_Test_DE_1548.T0.de.wav
+│   │       ├── MSLT_Test_DE_1561.T0.de.wav
+│   │       ├── MSLT_Test_DE_1584.T0.de.wav
+│   │       ├── MSLT_Test_DE_1618.T0.de.wav
+│   │       ├── MSLT_Test_DE_1622.T0.de.wav
+│   │       ├── MSLT_Test_DE_1624.T0.de.wav
+│   │       ├── MSLT_Test_DE_1645.T0.de.wav
+│   │       ├── MSLT_Test_DE_1691.T0.de.wav
+│   │       ├── MSLT_Test_DE_1706.T0.de.wav
+│   │       ├── MSLT_Test_DE_1714.T0.de.wav
+│   │       ├── MSLT_Test_DE_1789.T0.de.wav
+│   │       ├── MSLT_Test_DE_1799.T0.de.wav
+│   │       ├── MSLT_Test_DE_1800.T0.de.wav
+│   │       ├── MSLT_Test_DE_1802.T0.de.wav
+│   │       ├── MSLT_Test_DE_1828.T0.de.wav
+│   │       ├── MSLT_Test_DE_1915.T0.de.wav
+│   │       ├── MSLT_Test_DE_1933.T0.de.wav
+│   │       ├── MSLT_Test_DE_1955.T0.de.wav
+│   │       ├── MSLT_Test_DE_1957.T0.de.wav
+│   │       ├── MSLT_Test_DE_1970.T0.de.wav
+│   │       ├── MSLT_Test_DE_2100.T0.de.wav
+│   │       ├── MSLT_Test_DE_2124.T0.de.wav
+│   │       ├── MSLT_Test_DE_2151.T0.de.wav
+│   │       ├── MSLT_Test_DE_2171.T0.de.wav
+│   │       └── MSLT_Test_DE_2273.T0.de.wav
+│   ├── mslt_100_desktop
+│   │   ├── w1
+│   │   └── whisper
 │   ├── decoder_activation_ckpt.jsonl
 │   ├── eda_correlation_trends_20260815_034538.png
 │   ├── level2_ckpt_asr.jsonl
@@ -125,7 +242,8 @@ BridgeDEUX/
 ├── datasets
 │   ├── builders
 │   │   ├── benchmark_subset.py
-│   │   └── dataset_cache_builder.py
+│   │   ├── dataset_cache_builder.py
+│   │   └── mslt_asr_cache_builder.py
 │   ├── cache
 │   │   ├── covost
 │   │   │   └── de_en
@@ -133,7 +251,13 @@ BridgeDEUX/
 │   │   │   └── marianmt_results_20260712_084824_736816.jsonl.bak
 │   │   ├── mslt
 │   │   │   └── de_en
+│   │   │       ├── dev
+│   │   │       │   └── parakeet_dev_predictions.jsonl
 │   │   │       └── test
+│   │   │           ├── mslt_de_en_test.csv.bak
+│   │   │           ├── mslt_de_en_test.json.bak
+│   │   │           ├── mslt_de_en_test.parquet.bak
+│   │   │           └── parakeet_bench_10.manifest
 │   │   ├── marianmt_results_20260712_080020_248595.jsonl.bak
 │   │   └── marianmt_results_20260712_080551_438641.jsonl.bak
 │   ├── downloaders
@@ -144,9 +268,11 @@ BridgeDEUX/
 │   │   └── verifier.py
 │   ├── logs
 │   │   └── bridgedeux.log
+│   ├── manifests
 │   ├── providers
 │   │   ├── base_provider.py
 │   │   ├── covost_provider.py
+│   │   ├── mslt_asr_provider.py
 │   │   ├── mslt_provider.py
 │   │   └── sample.py
 │   ├── raw
@@ -198,8 +324,20 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0036.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0037.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0038.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0039.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0039.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0039.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0040.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0041.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0041.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0041.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_0042.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0042.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0042.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0043.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0044.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0044.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0044.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0045.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0046.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0047.T0.de.wav
@@ -269,6 +407,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0111.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0112.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0113.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0114.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0114.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0114.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0115.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0116.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0117.T0.de.wav
@@ -285,6 +426,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0128.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0129.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0130.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0131.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0131.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0131.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0132.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0133.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0134.T0.de.wav
@@ -308,6 +452,12 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0152.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0153.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0154.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0155.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0155.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0155.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_0156.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0156.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0156.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0157.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0158.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0159.T0.de.wav
@@ -361,6 +511,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0207.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0208.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0209.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0210.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0210.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0210.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0211.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0212.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0213.T0.de.wav
@@ -414,6 +567,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0261.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0262.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0263.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0264.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0264.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0264.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0265.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0266.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0267.T0.de.wav
@@ -455,6 +611,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0303.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0304.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0305.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0306.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0306.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0306.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0307.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0308.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0309.T0.de.wav
@@ -466,6 +625,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0315.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0316.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0317.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0318.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0318.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0318.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0319.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0320.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0321.T0.de.wav
@@ -483,6 +645,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0333.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0334.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0335.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0336.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0336.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0336.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0337.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0338.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0339.T0.de.wav
@@ -528,8 +693,14 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0379.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0380.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0381.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0382.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0382.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0382.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0383.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0384.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0385.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0385.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0385.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0386.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0387.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0388.T0.de.wav
@@ -548,6 +719,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0401.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0402.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0403.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0404.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0404.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0404.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0405.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0406.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0407.T0.de.wav
@@ -572,21 +746,54 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0426.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0427.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0428.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0429.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0429.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0429.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0430.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0431.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0431.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0431.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_0432.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0432.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0432.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0433.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0434.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0434.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0434.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_0435.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0435.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0435.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0436.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0437.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0437.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0437.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0438.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0439.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0440.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0440.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0440.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0441.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0442.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0443.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0444.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0445.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0445.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0445.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0446.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0447.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0447.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0447.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0448.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0449.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0450.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0450.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0450.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0451.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0452.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0453.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0454.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0454.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0454.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0455.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0456.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0457.T0.de.wav
@@ -594,11 +801,20 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0459.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0460.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0461.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0462.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0462.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0462.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_0463.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0463.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0463.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0464.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0465.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0466.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0467.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0468.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0469.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0469.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0469.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0470.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0471.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0472.T0.de.wav
@@ -693,6 +909,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0561.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0562.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0563.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0564.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0564.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0564.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0565.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0566.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0567.T0.de.wav
@@ -833,6 +1052,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0702.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0703.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0704.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0705.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0705.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0705.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0706.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0707.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0708.T0.de.wav
@@ -840,9 +1062,15 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0710.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0711.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0712.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0713.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0713.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0713.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0714.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0715.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0716.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0717.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0717.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0717.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0718.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0719.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0720.T0.de.wav
@@ -857,6 +1085,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0729.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0730.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0731.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0732.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0732.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0732.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0733.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0734.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0735.T0.de.wav
@@ -870,16 +1101,25 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0743.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0744.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0745.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0746.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0746.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0746.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0747.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0748.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0749.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0750.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0751.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0752.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0752.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0752.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0753.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0754.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0755.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0756.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0757.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0758.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0758.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0758.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0759.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0760.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0761.T0.de.wav
@@ -910,6 +1150,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0786.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0787.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0788.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0789.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0789.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0789.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0790.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0791.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0792.T0.de.wav
@@ -920,6 +1163,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0797.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0798.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0799.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0800.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0800.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0800.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0801.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0802.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0803.T0.de.wav
@@ -969,6 +1215,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0847.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0848.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0849.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0850.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0850.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0850.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0851.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0852.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0853.T0.de.wav
@@ -1006,6 +1255,12 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_0885.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0886.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0887.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0888.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0888.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0888.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_0889.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_0889.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_0889.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_0890.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0891.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_0892.T0.de.wav
@@ -1206,6 +1461,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1087.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1088.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1089.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1090.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1090.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1090.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1091.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1092.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1093.T0.de.wav
@@ -1214,6 +1472,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1096.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1097.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1098.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1099.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1099.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1099.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1100.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1101.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1102.T0.de.wav
@@ -1230,9 +1491,15 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1113.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1114.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1115.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1116.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1116.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1116.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1117.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1118.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1119.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1120.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1120.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1120.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1121.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1122.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1123.T0.de.wav
@@ -1240,6 +1507,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1125.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1126.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1127.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1128.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1128.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1128.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1129.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1130.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1131.T0.de.wav
@@ -1344,6 +1614,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1230.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1231.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1232.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1233.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1233.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1233.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1234.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1235.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1236.T0.de.wav
@@ -1358,12 +1631,21 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1245.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1246.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1247.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1248.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1248.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1248.T2.de.snt
+│   │   │           ├── MSLT_Test_DE_1249.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1249.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1249.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1250.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1251.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1252.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1253.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1254.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1255.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1256.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1256.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1256.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1257.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1258.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1259.T0.de.wav
@@ -1426,6 +1708,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1316.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1317.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1318.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1319.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1319.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1319.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1320.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1321.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1322.T0.de.wav
@@ -1433,6 +1718,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1324.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1325.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1326.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1327.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1327.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1327.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1328.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1329.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1330.T0.de.wav
@@ -1462,6 +1750,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1354.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1355.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1356.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1357.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1357.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1357.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1358.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1359.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1360.T0.de.wav
@@ -1478,6 +1769,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1371.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1372.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1373.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1374.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1374.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1374.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1375.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1376.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1377.T0.de.wav
@@ -1495,8 +1789,14 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1389.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1390.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1391.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1392.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1392.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1392.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1393.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1394.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1395.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1395.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1395.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1396.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1397.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1398.T0.de.wav
@@ -1526,6 +1826,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1422.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1423.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1424.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1425.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1425.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1425.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1426.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1427.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1428.T0.de.wav
@@ -1556,6 +1859,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1453.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1454.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1455.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1456.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1456.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1456.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1457.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1458.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1459.T0.de.wav
@@ -1613,6 +1919,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1511.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1512.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1513.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1514.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1514.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1514.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1515.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1516.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1517.T0.de.wav
@@ -1624,11 +1933,20 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1523.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1524.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1525.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1526.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1526.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1526.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1527.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1528.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1528.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1528.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1529.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1530.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1531.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1532.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1533.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1533.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1533.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1534.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1535.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1536.T0.de.wav
@@ -1639,11 +1957,17 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1541.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1542.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1543.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1544.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1544.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1544.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1545.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1546.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1547.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1548.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1549.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1550.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1550.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1550.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1551.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1552.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1553.T0.de.wav
@@ -1663,6 +1987,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1567.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1568.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1569.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1570.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1570.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1570.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1571.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1572.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1573.T0.de.wav
@@ -1721,6 +2048,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1626.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1627.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1628.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1629.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1629.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1629.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1630.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1631.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1632.T0.de.wav
@@ -1756,6 +2086,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1662.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1663.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1664.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1665.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1665.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1665.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1666.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1667.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1668.T0.de.wav
@@ -1779,6 +2112,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1686.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1687.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1688.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1689.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1689.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1689.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1690.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1691.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1692.T0.de.wav
@@ -1892,8 +2228,17 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1800.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1801.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1802.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1803.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1803.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1803.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1804.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1805.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1805.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1805.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1806.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1807.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1807.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1807.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1808.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1809.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1810.T0.de.wav
@@ -1985,6 +2330,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1896.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1897.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1898.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1899.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1899.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1899.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1900.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1901.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1902.T0.de.wav
@@ -1994,6 +2342,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1906.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1907.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1908.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1909.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1909.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1909.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1910.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1911.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1912.T0.de.wav
@@ -2049,6 +2400,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1962.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1963.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1964.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1965.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1965.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1965.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1966.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1967.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1968.T0.de.wav
@@ -2075,9 +2429,15 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_1989.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1990.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1991.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1992.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1992.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1992.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1993.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1994.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1995.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1996.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_1996.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_1996.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_1997.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1998.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_1999.T0.de.wav
@@ -2198,6 +2558,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_2114.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2115.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2116.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2117.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2117.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2117.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2118.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2119.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2120.T0.de.wav
@@ -2206,6 +2569,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_2123.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2124.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2125.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2126.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2126.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2126.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2127.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2128.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2129.T0.de.wav
@@ -2225,15 +2591,24 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_2143.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2144.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2145.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2146.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2146.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2146.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2147.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2148.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2149.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2150.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2151.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2152.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2152.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2152.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2153.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2154.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2155.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2156.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2157.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2157.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2157.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2158.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2159.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2160.T0.de.wav
@@ -2291,6 +2666,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_2212.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2213.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2214.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2215.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2215.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2215.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2216.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2217.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2218.T0.de.wav
@@ -2340,6 +2718,9 @@ BridgeDEUX/
 │   │   │           ├── MSLT_Test_DE_2262.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2263.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2264.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2265.T0.de.wav
+│   │   │           ├── MSLT_Test_DE_2265.T1.de.snt
+│   │   │           ├── MSLT_Test_DE_2265.T2.de.snt
 │   │   │           ├── MSLT_Test_DE_2266.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2267.T0.de.wav
 │   │   │           ├── MSLT_Test_DE_2268.T0.de.wav
@@ -2366,7 +2747,46 @@ BridgeDEUX/
 ├── evaluation_reports
 │   └── evaluation_summary.md
 ├── experiments
+│   ├── checkpoints
+│   │   ├── w1_merged
+│   │   │   └── model.safetensors
+│   │   ├── w1_unfiltered
+│   │   │   ├── best
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   └── README.md
+│   │   │   ├── epoch-1
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   └── README.md
+│   │   │   └── epoch-2
+│   │   │       ├── adapter_model.safetensors
+│   │   │       └── README.md
+│   │   ├── w2_filtered
+│   │   │   ├── best
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   └── README.md
+│   │   │   ├── epoch-1
+│   │   │   │   ├── adapter_model.safetensors
+│   │   │   │   └── README.md
+│   │   │   └── epoch-2
+│   │   │       ├── adapter_model.safetensors
+│   │   │       └── README.md
+│   │   ├── w1_model.pt
+│   │   └── w1_model_correct.pt
 │   ├── results
+│   │   ├── w0_w1_w2_test
+│   │   │   ├── kd_eval_w0
+│   │   │   │   ├── kd_eval_w0_results.jsonl
+│   │   │   │   └── kd_eval_w0_results_20260826_142612_184478.jsonl.bak
+│   │   │   ├── kd_eval_w1
+│   │   │   │   └── kd_eval_w1_results_20260826_150844_855660.jsonl.bak
+│   │   │   └── kd_eval_w2
+│   │   │       └── kd_eval_w2_results_20260826_155155_023773.jsonl.bak
+│   │   ├── w1_decoding_ablation
+│   │   ├── w1_ggml_test
+│   │   ├── w1_hf_controlled
+│   │   ├── w1_hf_length_penalty
+│   │   ├── w1_hf_vs_ggml
+│   │   └── w1_pathological
 │   ├── 00_test_framework.py
 │   ├── 01_inspect_covost.py
 │   ├── 01_profile_german_vocab.py
@@ -2386,17 +2806,47 @@ BridgeDEUX/
 │   ├── 05d_dmargin_probe.py
 │   ├── __init__.py
 │   ├── analyze_mt_baseline.py
+│   ├── analyze_parakeet_mslt_dev.py
 │   ├── analyze_whisper_baseline.py
+│   ├── analyze_whisper_mslt_covost.py
 │   ├── benchmark_marian.py
 │   ├── build_full_benchmark.py
 │   ├── check_generation_config.py
+│   ├── check_parakeet_filter.py
 │   ├── check_subset.py
 │   ├── check_whisper_vocab_params.py
+│   ├── compare_audio_duration.py
+│   ├── compare_w1_hf_ggml.py
+│   ├── controlled_hf_w1.py
 │   ├── diagnose_parakeet_mslt.py
+│   ├── diagnose_w0_discrepancy.py
+│   ├── diagnose_w1_decoding_ablation.py
+│   ├── diagnose_w1_hf_vs_ggml.py
+│   ├── diagnose_w1_pathological.py
 │   ├── evaluate_models.py
+│   ├── evaluate_w0_w1_w2.py
+│   ├── evaluate_w1_ggml.py
+│   ├── evaluate_w1_hf_controlled.py
+│   ├── evaluate_w1_hf_length_penalty.py
+│   ├── final_evaluate_2275.py
+│   ├── generate_parakeet_mslt_dev.py
+│   ├── length_controlled_comparison.py
+│   ├── merge_w1_lora.py
 │   ├── missing_dataset.py
+│   ├── mslt_annotation_analysis.py
+│   ├── mslt_annotation_type_analysis.py
+│   ├── mslt_annotation_type_by_length.py
+│   ├── mslt_conversational_insertion_analysis.py
+│   ├── mslt_insertion_nb_estimated.py
+│   ├── mslt_insertion_negative_binomial.py
+│   ├── mslt_insertion_regression.py
+│   ├── mslt_length_controlled_insertions.py
+│   ├── mslt_t1_t2_analysis.py
+│   ├── resolve_wer_discrepancy.py
 │   ├── run_benchmark.py
+│   ├── score_mslt.py
 │   ├── smoke_test_comet.py
+│   ├── smoke_test_whisper_lora.py
 │   ├── test_audio_decode.py
 │   ├── test_benchmark_subset.py
 │   ├── test_build_subset.py
@@ -2408,8 +2858,42 @@ BridgeDEUX/
 │   ├── test_vosk_inference.py
 │   ├── test_whisper_inference.py
 │   ├── test_wrapper.py
+│   ├── test_write.py
+│   ├── train_w1.py
+│   ├── train_w2.py
 │   ├── validate_onnx_export.py
-│   └── verify_marian_onnx.py
+│   ├── verify_marian_onnx.py
+│   ├── verify_whisper_baseline.py
+│   ├── w1_pt_correct.py
+│   ├── whisper_error_types.py
+│   └── whisper_error_types_by_length.py
+├── figure_scripts
+│   ├── figure_01_asr_wer.py
+│   ├── figure_02_covost2_vs_mslt_wer.py
+│   ├── figure_03_wer_by_utterance_length.py
+│   ├── figure_04_fp32_vs_int8_quality.py
+│   ├── figure_05_fp32_int8_distribution.py
+│   ├── figure_06_margin_divergence.py
+│   ├── figure_07_clean_asr_margin_curve.py
+│   ├── figure_08_asr_precision_interaction.py
+│   └── generate_bridge_deux_tables.py
+├── figures
+│   ├── figure_01_asr_wer.pdf
+│   ├── figure_01_asr_wer.png
+│   ├── figure_02_dataset_wer_comparison.pdf
+│   ├── figure_02_dataset_wer_comparison.png
+│   ├── figure_03_wer_by_utterance_length.pdf
+│   ├── figure_03_wer_by_utterance_length.png
+│   ├── figure_04_fp32_vs_int8_quality.pdf
+│   ├── figure_04_fp32_vs_int8_quality.png
+│   ├── figure_05_fp32_int8_distribution.pdf
+│   ├── figure_05_fp32_int8_distribution.png
+│   ├── figure_06_margin_divergence.pdf
+│   ├── figure_06_margin_divergence.png
+│   ├── figure_07_clean_asr_margin_curve.pdf
+│   ├── figure_07_clean_asr_margin_curve.png
+│   ├── figure_08_asr_precision_interaction.pdf
+│   └── figure_08_asr_precision_interaction.png
 ├── models
 │   ├── asr
 │   │   ├── __init__.py
@@ -2473,6 +2957,8 @@ BridgeDEUX/
 │   │       │   └── splice.conf
 │   │       ├── COPYING
 │   │       └── README
+│   ├── w1-kd
+│   ├── w1-kd-hf
 │   ├── whisper
 │   └── marian_onnx.py
 ├── results
@@ -2511,8 +2997,10 @@ BridgeDEUX/
 │   │   ├── marianmt_covost2_de_en_test_results_20260712_173309_727441.jsonl.bak
 │   │   ├── marianmt_covost2_de_en_test_results_20260712_200852_148534.jsonl.bak
 │   │   └── marianmt_covost2_de_en_test_results_20260712_204815_654890.jsonl.bak
-│   ├── parakeet.cpp (tdt 0.6b v3 f16)_mslt_test
-│   │   └── parakeet.cpp (tdt 0.6b v3 f16)_mslt_test_results_20260824_153435_926765.jsonl.bak
+│   ├── parakeet.cpp (tdt 0.6b v3 f16)_mslt_asr_test
+│   │   ├── parakeet.cpp (tdt 0.6b v3 f16)_mslt_asr_test_results_20260825_121148_479733.jsonl.bak
+│   │   ├── parakeet.cpp (tdt 0.6b v3 f16)_mslt_asr_test_results_20260827_215040_553935.jsonl.bak
+│   │   └── parakeet.cpp (tdt 0.6b v3 f16)_mslt_asr_test_results_interrupted_248.jsonl
 │   ├── parakeet.cpp (tdt 0.6b v3 f32)_test
 │   │   └── parakeet.cpp (tdt 0.6b v3 f32)_test_results_20260822_212458_299603.jsonl.bak
 │   ├── parakeet.cpp (tdt 0.6b v3 f32)_train
@@ -2520,17 +3008,23 @@ BridgeDEUX/
 │   │   └── parakeet.cpp (tdt 0.6b v3 f32)_train_results_20260822_210847_928465.jsonl.bak
 │   ├── vosk_test
 │   │   └── vosk_test_results_20260716_134712_609335.jsonl.bak
+│   ├── whisper.cpp (base)_mslt_asr_test
+│   │   └── whisper.cpp (base)_mslt_asr_test_results.jsonl
 │   ├── whisper.cpp (base)_mslt_test
-│   │   ├── whisper.cpp (base)_mslt_test_results.jsonl
-│   │   └── whisper.cpp (base)_mslt_test_results_20260824_111946_783832.jsonl.bak
+│   │   ├── whisper.cpp (base)_mslt_test_results_20260824_111946_783832.jsonl.bak
+│   │   ├── whisper.cpp (base)_mslt_test_results_20260827_220920_815151.jsonl.bak
+│   │   └── whisper.cpp (base)_mslt_test_results_recovery_backup.jsonl
 │   ├── whisper.cpp (base)_test
 │   │   ├── whisper.cpp (base)_test_results_20260714_215322_040673.jsonl.bak
 │   │   └── whisper.cpp (base)_test_results_20260716_203250_747588.jsonl.bak
 │   ├── whisper.cpp (base)_test_300
-│   └── whisper.cpp (base)_train
-│       └── whisper.cpp (base)_train_results_20260822_144325_318236.jsonl.bak
+│   ├── whisper.cpp (base)_train
+│   │   └── whisper.cpp (base)_train_results_20260822_144325_318236.jsonl.bak
+│   └── whisper_mslt_covost2_analysis_results.xlsx
 ├── scheduler
 ├── scripts
+│   ├── analysis
+│   │   └── mslt_100_desktop
 │   ├── 00b_oracle_ceiling.py
 │   ├── 01_mine_quantization_deltas.py
 │   ├── 02_score_comet.py
@@ -2554,6 +3048,9 @@ BridgeDEUX/
 │   ├── 05f_calculate_comet_stats.py
 │   ├── 05g_patch_and_complete_cohort.py
 │   ├── 06b_export_mobile_audio.py
+│   ├── 07_evaluate_mslt_100_desktop.py
+│   ├── 08_evaluate_covost2_100_w1.py
+│   ├── 08_evaluate_covost2_100_whisper.py
 │   ├── __init__.py
 │   ├── analyze_onnx.py
 │   ├── check_cascade_artifacts.py
@@ -2568,6 +3065,57 @@ BridgeDEUX/
 ├── utils
 │   ├── __init__.py
 │   └── experiment_logger.py
+├── whisper-openai
+│   ├── .github
+│   │   ├── workflows
+│   │   │   ├── python-publish.yml
+│   │   │   └── test.yml
+│   │   └── dependabot.yml
+│   ├── data
+│   │   └── README.md
+│   ├── notebooks
+│   │   ├── LibriSpeech.ipynb
+│   │   └── Multilingual_ASR.ipynb
+│   ├── tests
+│   │   ├── conftest.py
+│   │   ├── jfk.flac
+│   │   ├── test_audio.py
+│   │   ├── test_normalizer.py
+│   │   ├── test_timing.py
+│   │   ├── test_tokenizer.py
+│   │   └── test_transcribe.py
+│   ├── whisper
+│   │   ├── assets
+│   │   │   ├── gpt2.tiktoken
+│   │   │   ├── mel_filters.npz
+│   │   │   └── multilingual.tiktoken
+│   │   ├── normalizers
+│   │   │   ├── __init__.py
+│   │   │   ├── basic.py
+│   │   │   └── english.py
+│   │   ├── __init__.py
+│   │   ├── __main__.py
+│   │   ├── audio.py
+│   │   ├── decoding.py
+│   │   ├── model.py
+│   │   ├── timing.py
+│   │   ├── tokenizer.py
+│   │   ├── transcribe.py
+│   │   ├── triton_ops.py
+│   │   ├── utils.py
+│   │   └── version.py
+│   ├── .flake8
+│   ├── .gitattributes
+│   ├── .gitignore
+│   ├── .pre-commit-config.yaml
+│   ├── approach.png
+│   ├── CHANGELOG.md
+│   ├── language-breakdown.svg
+│   ├── LICENSE
+│   ├── MANIFEST.in
+│   ├── model-card.md
+│   ├── pyproject.toml
+│   └── README.md
 ├── whisper.cpp
 │   ├── .devops
 │   │   ├── cublas.Dockerfile
@@ -2783,12 +3331,736 @@ BridgeDEUX/
 │   │       ├── README.md
 │   │       └── whispercpp.gemspec
 │   ├── build
-│   │   └── CMakeFiles
-│   │       ├── 4.4.2
-│   │       │   └── CMakeSystem.cmake
-│   │       ├── pkgRedirects
-│   │       ├── cmake.check_cache
-│   │       └── CMakeConfigureLog.yaml
+│   │   ├── bin
+│   │   ├── CMakeFiles
+│   │   │   ├── 4.4.2
+│   │   │   │   ├── CompilerIdASM
+│   │   │   │   ├── CompilerIdC
+│   │   │   │   │   ├── tmp
+│   │   │   │   │   └── CMakeCCompilerId.c
+│   │   │   │   ├── CompilerIdCXX
+│   │   │   │   │   ├── tmp
+│   │   │   │   │   └── CMakeCXXCompilerId.cpp
+│   │   │   │   ├── CMakeASMCompiler.cmake
+│   │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │   ├── CMakeRCCompiler.cmake
+│   │   │   │   └── CMakeSystem.cmake
+│   │   │   ├── CMakeScratch
+│   │   │   ├── Continuous.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousBuild.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousConfigure.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousCoverage.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousMemCheck.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousStart.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousSubmit.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousTest.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ContinuousUpdate.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── Experimental.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalBuild.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalConfigure.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalCoverage.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalMemCheck.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalStart.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalSubmit.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalTest.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── ExperimentalUpdate.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── FindOpenMP
+│   │   │   ├── Nightly.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyBuild.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyConfigure.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyCoverage.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyMemCheck.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyMemoryCheck.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyStart.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlySubmit.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyTest.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── NightlyUpdate.dir
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   └── progress.make
+│   │   │   ├── pkgRedirects
+│   │   │   ├── cmake.check_cache
+│   │   │   ├── CMakeConfigureLog.yaml
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── CTestScript.cmake
+│   │   │   ├── Makefile.cmake
+│   │   │   ├── Makefile2
+│   │   │   └── progress.marks
+│   │   ├── examples
+│   │   │   ├── bench
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── whisper-bench.dir
+│   │   │   │   │   │   ├── bench.cpp.obj
+│   │   │   │   │   │   ├── bench.cpp.obj.d
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── cli
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── whisper-cli.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cli.cpp.obj
+│   │   │   │   │   │   ├── cli.cpp.obj.d
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── common.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── common-ggml.cpp.obj
+│   │   │   │   │   ├── common-ggml.cpp.obj.d
+│   │   │   │   │   ├── common-whisper.cpp.obj
+│   │   │   │   │   ├── common-whisper.cpp.obj.d
+│   │   │   │   │   ├── common.cpp.obj
+│   │   │   │   │   ├── common.cpp.obj.d
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── grammar-parser.cpp.obj
+│   │   │   │   │   ├── grammar-parser.cpp.obj.d
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   └── progress.marks
+│   │   │   ├── deprecation-warning
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── bench.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── deprecation-warning.cpp.obj
+│   │   │   │   │   │   ├── deprecation-warning.cpp.obj.d
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── main.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── deprecation-warning.cpp.obj
+│   │   │   │   │   │   ├── deprecation-warning.cpp.obj.d
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── parakeet-cli
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── parakeet-cli.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   ├── parakeet-cli.cpp.obj
+│   │   │   │   │   │   ├── parakeet-cli.cpp.obj.d
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── parakeet-quantize
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── parakeet-quantize.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   ├── parakeet-quantize.cpp.obj
+│   │   │   │   │   │   ├── parakeet-quantize.cpp.obj.d
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── quantize
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── whisper-quantize.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   ├── progress.make
+│   │   │   │   │   │   ├── quantize.cpp.obj
+│   │   │   │   │   │   └── quantize.cpp.obj.d
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── server
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── whisper-server.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   ├── progress.make
+│   │   │   │   │   │   ├── server.cpp.obj
+│   │   │   │   │   │   └── server.cpp.obj.d
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── vad-speech-segments
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── whisper-vad-speech-segments.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   │   ├── objects.a
+│   │   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   │   ├── progress.make
+│   │   │   │   │   │   ├── speech.cpp.obj
+│   │   │   │   │   │   └── speech.cpp.obj.d
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── CTestTestfile.cmake
+│   │   │   │   └── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── CTestTestfile.cmake
+│   │   │   ├── libcommon.a
+│   │   │   └── Makefile
+│   │   ├── ggml
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   └── progress.marks
+│   │   │   ├── src
+│   │   │   │   ├── CMakeFiles
+│   │   │   │   │   ├── ggml-base.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── ggml-alloc.c.obj
+│   │   │   │   │   │   ├── ggml-alloc.c.obj.d
+│   │   │   │   │   │   ├── ggml-backend-meta.cpp.obj
+│   │   │   │   │   │   ├── ggml-backend-meta.cpp.obj.d
+│   │   │   │   │   │   ├── ggml-backend.cpp.obj
+│   │   │   │   │   │   ├── ggml-backend.cpp.obj.d
+│   │   │   │   │   │   ├── ggml-opt.cpp.obj
+│   │   │   │   │   │   ├── ggml-opt.cpp.obj.d
+│   │   │   │   │   │   ├── ggml-quants.c.obj
+│   │   │   │   │   │   ├── ggml-quants.c.obj.d
+│   │   │   │   │   │   ├── ggml-threading.cpp.obj
+│   │   │   │   │   │   ├── ggml-threading.cpp.obj.d
+│   │   │   │   │   │   ├── ggml.c.obj
+│   │   │   │   │   │   ├── ggml.c.obj.d
+│   │   │   │   │   │   ├── ggml.cpp.obj
+│   │   │   │   │   │   ├── ggml.cpp.obj.d
+│   │   │   │   │   │   ├── gguf.cpp.obj
+│   │   │   │   │   │   ├── gguf.cpp.obj.d
+│   │   │   │   │   │   ├── includes_C.rsp
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── ggml-cpu.dir
+│   │   │   │   │   │   ├── ggml-cpu
+│   │   │   │   │   │   │   ├── amx
+│   │   │   │   │   │   │   │   ├── amx.cpp.obj
+│   │   │   │   │   │   │   │   ├── amx.cpp.obj.d
+│   │   │   │   │   │   │   │   ├── mmq.cpp.obj
+│   │   │   │   │   │   │   │   └── mmq.cpp.obj.d
+│   │   │   │   │   │   │   ├── arch
+│   │   │   │   │   │   │   │   └── x86
+│   │   │   │   │   │   │   │       ├── quants.c.obj
+│   │   │   │   │   │   │   │       ├── quants.c.obj.d
+│   │   │   │   │   │   │   │       ├── repack.cpp.obj
+│   │   │   │   │   │   │   │       └── repack.cpp.obj.d
+│   │   │   │   │   │   │   ├── binary-ops.cpp.obj
+│   │   │   │   │   │   │   ├── binary-ops.cpp.obj.d
+│   │   │   │   │   │   │   ├── ggml-cpu.c.obj
+│   │   │   │   │   │   │   ├── ggml-cpu.c.obj.d
+│   │   │   │   │   │   │   ├── ggml-cpu.cpp.obj
+│   │   │   │   │   │   │   ├── ggml-cpu.cpp.obj.d
+│   │   │   │   │   │   │   ├── hbm.cpp.obj
+│   │   │   │   │   │   │   ├── hbm.cpp.obj.d
+│   │   │   │   │   │   │   ├── ops.cpp.obj
+│   │   │   │   │   │   │   ├── ops.cpp.obj.d
+│   │   │   │   │   │   │   ├── quants.c.obj
+│   │   │   │   │   │   │   ├── quants.c.obj.d
+│   │   │   │   │   │   │   ├── repack.cpp.obj
+│   │   │   │   │   │   │   ├── repack.cpp.obj.d
+│   │   │   │   │   │   │   ├── traits.cpp.obj
+│   │   │   │   │   │   │   ├── traits.cpp.obj.d
+│   │   │   │   │   │   │   ├── unary-ops.cpp.obj
+│   │   │   │   │   │   │   ├── unary-ops.cpp.obj.d
+│   │   │   │   │   │   │   ├── vec.cpp.obj
+│   │   │   │   │   │   │   └── vec.cpp.obj.d
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── includes_C.rsp
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── ggml.dir
+│   │   │   │   │   │   ├── build.make
+│   │   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   │   ├── depend.make
+│   │   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   │   ├── flags.make
+│   │   │   │   │   │   ├── ggml-backend-dl.cpp.obj
+│   │   │   │   │   │   ├── ggml-backend-dl.cpp.obj.d
+│   │   │   │   │   │   ├── ggml-backend-reg.cpp.obj
+│   │   │   │   │   │   ├── ggml-backend-reg.cpp.obj.d
+│   │   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   │   └── progress.make
+│   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   └── progress.marks
+│   │   │   │   ├── ggml-cpu
+│   │   │   │   │   ├── CMakeFiles
+│   │   │   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   │   │   └── progress.marks
+│   │   │   │   │   ├── cmake_install.cmake
+│   │   │   │   │   └── Makefile
+│   │   │   │   ├── cmake_install.cmake
+│   │   │   │   ├── ggml-base.a
+│   │   │   │   ├── ggml-cpu.a
+│   │   │   │   ├── ggml.a
+│   │   │   │   └── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── ggml-config-version.cmake
+│   │   │   ├── ggml-config.cmake
+│   │   │   └── Makefile
+│   │   ├── src
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── parakeet.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── parakeet.cpp.obj
+│   │   │   │   │   ├── parakeet.cpp.obj.d
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── whisper.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── whisper.cpp.obj
+│   │   │   │   │   └── whisper.cpp.obj.d
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   └── progress.marks
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── libparakeet.a
+│   │   │   ├── libwhisper.a
+│   │   │   └── Makefile
+│   │   ├── Testing
+│   │   │   └── Temporary
+│   │   ├── tests
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── run-test-parakeet-full-diffusion.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── run-test-parakeet-full-gb1.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── run-test-parakeet-full-jfk.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── test-common-utf8.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-common-utf8.cpp.obj
+│   │   │   │   │   └── test-common-utf8.cpp.obj.d
+│   │   │   │   ├── test-parakeet-full-diffusion.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-parakeet-full.cpp.obj
+│   │   │   │   │   └── test-parakeet-full.cpp.obj.d
+│   │   │   │   ├── test-parakeet-full-gb1.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-parakeet-full.cpp.obj
+│   │   │   │   │   └── test-parakeet-full.cpp.obj.d
+│   │   │   │   ├── test-parakeet-full-jfk.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-parakeet-full.cpp.obj
+│   │   │   │   │   └── test-parakeet-full.cpp.obj.d
+│   │   │   │   ├── test-parakeet.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-parakeet.cpp.obj
+│   │   │   │   │   └── test-parakeet.cpp.obj.d
+│   │   │   │   ├── test-vad-full.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-vad-full.cpp.obj
+│   │   │   │   │   └── test-vad-full.cpp.obj.d
+│   │   │   │   ├── test-vad.dir
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── linkLibs.rsp
+│   │   │   │   │   ├── objects.a
+│   │   │   │   │   ├── objects1.rsp
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   ├── test-vad.cpp.obj
+│   │   │   │   │   └── test-vad.cpp.obj.d
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   └── progress.marks
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── CTestTestfile.cmake
+│   │   │   └── Makefile
+│   │   ├── cmake_install.cmake
+│   │   ├── CTestTestfile.cmake
+│   │   ├── DartConfiguration.tcl
+│   │   ├── Makefile
+│   │   ├── parakeet-config-version.cmake
+│   │   ├── parakeet-config.cmake
+│   │   ├── parakeet.pc
+│   │   ├── whisper-config-version.cmake
+│   │   ├── whisper-config.cmake
+│   │   └── whisper.pc
 │   ├── ci
 │   │   ├── README.md
 │   │   └── run.sh
@@ -4633,10 +5905,16 @@ BridgeDEUX/
 ├── 03_validate_nllb.py
 ├── 04_validate_parakeet.py
 ├── 05_validate_whisper.py
+├── bridge_deux_arm_table.md
+├── bridge_deux_desktop_table.md
 ├── check_audio.py
+├── check_columns.py
 ├── check_schema.py
+├── debug_test.py
 ├── e0e42d9a-8932-11f1-a259-cee4fe67858f.data
 ├── extract_samples.py
+├── find_mobile_files.py
 ├── LICENSE
 ├── project_tree_clean.md
+├── test_desktop_summary.py
 └── tree.py
