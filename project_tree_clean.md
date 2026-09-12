@@ -2876,6 +2876,10 @@ BridgeDEUX/
 │   ├── figure_06_margin_divergence.py
 │   ├── figure_07_clean_asr_margin_curve.py
 │   ├── figure_08_asr_precision_interaction.py
+│   ├── figure_09_primary_asr_kd_wer.py
+│   ├── figure_10_oracle_routing.py
+│   ├── figure_11_cascaded_system_performance.py
+│   ├── figure_12_difference_in_differences_chrf.py
 │   └── generate_bridge_deux_tables.py
 ├── figures
 │   ├── figure_01_asr_wer.pdf
@@ -2893,7 +2897,21 @@ BridgeDEUX/
 │   ├── figure_07_clean_asr_margin_curve.pdf
 │   ├── figure_07_clean_asr_margin_curve.png
 │   ├── figure_08_asr_precision_interaction.pdf
-│   └── figure_08_asr_precision_interaction.png
+│   ├── figure_08_asr_precision_interaction.png
+│   ├── figure_09_primary_asr_kd_wer.pdf
+│   ├── figure_09_primary_asr_kd_wer.png
+│   ├── figure_09_teacher_student_wer.pdf
+│   ├── figure_09_teacher_student_wer.png
+│   ├── figure_10_difference_in_differences_chrf.pdf
+│   ├── figure_10_oracle_routing_ceiling.pdf
+│   ├── figure_10_oracle_routing_ceiling.png
+│   ├── figure_10_oracle_win_distribution.pdf
+│   ├── figure_10_oracle_win_distribution.png
+│   ├── figure_11_cascaded_latency_dumbbell.pdf
+│   ├── figure_11_cascaded_system_performance.pdf
+│   ├── figure_11_cascaded_system_performance.png
+│   ├── figure_12_difference_in_differences_chrf.pdf
+│   └── figure_12_difference_in_differences_chrf.png
 ├── models
 │   ├── asr
 │   │   ├── __init__.py
@@ -5907,12 +5925,15 @@ BridgeDEUX/
 ├── 05_validate_whisper.py
 ├── bridge_deux_arm_table.md
 ├── bridge_deux_desktop_table.md
+├── check_asr.py
 ├── check_audio.py
 ├── check_columns.py
 ├── check_schema.py
 ├── debug_test.py
 ├── e0e42d9a-8932-11f1-a259-cee4fe67858f.data
 ├── extract_samples.py
+├── figure_09_teacher_student_wer.pdf
+├── figure_09_teacher_student_wer.png
 ├── find_mobile_files.py
 ├── LICENSE
 ├── project_tree_clean.md

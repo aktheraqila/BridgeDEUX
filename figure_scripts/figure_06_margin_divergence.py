@@ -156,19 +156,13 @@ def generate_figure():
     # Highlight low-margin region
     # -------------------------------------------------------------------------
 
-    ax.axvspan(
-        -0.5,
-        3.5,
-        alpha=0.08,
-        zorder=0,
-    )
-
+   
     # -------------------------------------------------------------------------
     # Lollipop
     # -------------------------------------------------------------------------
 
     # One restrained color for the main distribution.
-    point_color = "#CC1C3B"
+    point_color = "#106A67"
 
     ax.vlines(
         x,
@@ -223,21 +217,21 @@ def generate_figure():
     # Main finding annotation
     # -------------------------------------------------------------------------
 
-    ax.text(
-        1.5,
-        max(percentages.values) * 0.78,
-        f"{below_two:,} / {n:,} cases ({below_two_pct:.1f}%)\n"
-        "occur below a 2-logit margin",
-        ha="center",
-        va="center",
-        fontsize=11,
-        bbox=dict(
-            boxstyle="round,pad=0.45",
-            facecolor="white",
-            edgecolor="none",
-            alpha=0.90,
-        ),
-    )
+    # ax.text(
+    #     1.5,
+    #     max(percentages.values) * 0.78,
+    #     f"{below_two:,} / {n:,} cases ({below_two_pct:.1f}%)\n"
+    #     "occur below a 2-logit margin",
+    #     ha="center",
+    #     va="center",
+    #     fontsize=11,
+    #     bbox=dict(
+    #         boxstyle="round,pad=0.45",
+    #         facecolor="white",
+    #         edgecolor="none",
+    #         alpha=0.90,
+    #     ),
+    # )
 
     # -------------------------------------------------------------------------
     # Axes

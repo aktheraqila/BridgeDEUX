@@ -191,7 +191,7 @@ def generate_figure():
     # -------------------------------------------------------------------------
 
     clean_color = "#355C7D"
-    asr_color = "#2A7F62"
+    asr_color = "#3CC798"
 
     # -------------------------------------------------------------------------
     # Lines
@@ -300,19 +300,19 @@ def generate_figure():
     # LOW-MARGIN REGION
     # =============================================================================
 
-    ax.axvspan(
-        -0.5,
-        2.5,
-        alpha=0.035,
-        zorder=0,
-    )
+    # ax.axvspan(
+    #     -0.5,
+    #     2.5,
+    #     alpha=0.035,
+    #     zorder=0,
+    # )
 
     ax.text(
-        1.0,
-        0.97,
+        0.98,
+        1.00,
         "Low-margin region",
         transform=ax.get_xaxis_transform(),
-        ha="center",
+        ha="right",
         va="top",
         fontsize=9,
         alpha=0.65,

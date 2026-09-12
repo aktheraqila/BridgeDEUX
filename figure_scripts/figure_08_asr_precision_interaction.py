@@ -237,16 +237,16 @@ def generate_figure():
     # DiD ANNOTATION
     # =============================================================================
 
-    ax.text(
-        0.50,
-        0.52,
-        f"DiD = {did:+.3f} chrF++",
-        transform=ax.transAxes,
-        ha="center",
-        va="center",
-        fontsize=11,
-        fontweight="bold",
-    )
+    # ax.text(
+    #     0.50,
+    #     0.52,
+    #     f"DiD = {did:+.3f} chrF++",
+    #     transform=ax.transAxes,
+    #     ha="center",
+    #     va="center",
+    #     fontsize=11,
+    #     fontweight="bold",
+    # )
 
     # =============================================================================
     # AXES

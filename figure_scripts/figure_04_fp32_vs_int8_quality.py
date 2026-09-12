@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-import pandas as pd
+import numpy as np
 
 
 # =============================================================================
@@ -9,13 +9,6 @@ import pandas as pd
 # =============================================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-
-INPUT_FILE = (
-    PROJECT_ROOT
-    / "analysis"
-    / "scored_qirg_cohort_complete.parquet"
-)
-
 OUTPUT_DIR = PROJECT_ROOT / "figures"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -24,24 +17,19 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 # DATA
 # =============================================================================
 
-def load_results():
+models = [
+    "W0\nWhisper-base",
+    "W1\nFull Teacher\nSupervision",
+    "W2\nFiltered Teacher\nData",
+]
 
-    df = pd.read_parquet(
-        INPUT_FILE,
-        columns=[
-            "chrf_clean_f",
-            "chrf_clean_i",
-        ],
-    )
+wer = np.array([
+    42.55,
+    31.78,
+    34.83,
+])
 
-    df = df.dropna(
-        subset=[
-            "chrf_clean_f",
-            "chrf_clean_i",
-        ]
-    )
-
-    return df
+improvement = wer[0] - wer[1]
 
 
 # =============================================================================
@@ -50,145 +38,171 @@ def load_results():
 
 def generate_figure():
 
-    df = load_results()
-
-    n = len(df)
-
-    fp32_mean = df["chrf_clean_f"].mean()
-    int8_mean = df["chrf_clean_i"].mean()
-    delta = int8_mean - fp32_mean
-
     print("=" * 72)
-    print("FIGURE 4 — FP32 VS INT8 TRANSLATION QUALITY")
+    print("FIGURE 09 — PRIMARY ASR KNOWLEDGE DISTILLATION")
     print("=" * 72)
-    print(f"Samples              : {n:,}")
-    print(f"FP32 mean chrF++     : {fp32_mean:.4f}")
-    print(f"INT8 mean chrF++     : {int8_mean:.4f}")
-    print(f"INT8 - FP32          : {delta:+.4f}")
+
+    print(f"W0 — Whisper-base          : {wer[0]:.2f}% WER")
+    print(f"W1 — Full Teacher         : {wer[1]:.2f}% WER")
+    print(f"W2 — Filtered Teacher     : {wer[2]:.2f}% WER")
+    print(f"W1 improvement vs W0      : {improvement:.2f} percentage points")
     print()
 
     # -------------------------------------------------------------------------
     # Figure
     # -------------------------------------------------------------------------
 
-    fig, ax = plt.subplots(figsize=(9, 4.8))
+    fig, ax = plt.subplots(figsize=(9, 5.8))
 
-    fp32_color = "tab:blue"
-    int8_color = "tab:orange"
+    x = np.arange(len(models))
+    width = 0.38
 
-    # -------------------------------------------------------------------------
-    # Connecting line
-    # -------------------------------------------------------------------------
+    # Distinct colors
+    colors = [
+        "tab:blue",
+        "tab:green",
+        "tab:orange",
+    ]
 
-    ax.plot(
-        [int8_mean, fp32_mean],
-        [0, 0],
-        linewidth=2.5,
-        color="0.65",
-        zorder=1,
-    )
-
-    # -------------------------------------------------------------------------
-    # Points
-    # -------------------------------------------------------------------------
-
-    ax.scatter(
-        fp32_mean,
-        0,
-        s=180,
-        color=fp32_color,
+    bars = ax.bar(
+        x,
+        wer,
+        width=width,
+        color=colors,
+        edgecolor="black",
+        linewidth=0.9,
         zorder=3,
-        label="FP32",
-    )
-
-    ax.scatter(
-        int8_mean,
-        0,
-        s=180,
-        color=int8_color,
-        zorder=3,
-        label="Dynamic INT8",
     )
 
     # -------------------------------------------------------------------------
     # Value labels
     # -------------------------------------------------------------------------
 
-    ax.annotate(
-        f"{fp32_mean:.2f}",
-        xy=(fp32_mean, 0),
-        xytext=(0, 16),
-        textcoords="offset points",
-        ha="center",
-        va="bottom",
-        fontsize=12,
-        fontweight="bold",
-        color=fp32_color,
-    )
+    for bar, value in zip(bars, wer):
+        ax.annotate(
+            f"{value:.2f}%",
+            xy=(
+                bar.get_x() + bar.get_width() / 2,
+                value,
+            ),
+            xytext=(0, 7),
+            textcoords="offset points",
+            ha="center",
+            va="bottom",
+            fontsize=11,
+            fontweight="bold",
+        )
+
+    # -------------------------------------------------------------------------
+    # Parakeet teacher annotation
+    # -------------------------------------------------------------------------
+
+    teacher_x = 1.5
 
     ax.annotate(
-        f"{int8_mean:.2f}",
-        xy=(int8_mean, 0),
-        xytext=(0, -18),
-        textcoords="offset points",
+        "Parakeet-TDT 0.6B v3\nTeacher",
+        xy=(teacher_x, 36.5),
+        xytext=(teacher_x, 47.5),
         ha="center",
-        va="top",
-        fontsize=12,
+        va="center",
+        fontsize=10.5,
         fontweight="bold",
-        color=int8_color,
+        bbox=dict(
+            boxstyle="round,pad=0.35",
+            facecolor="white",
+            edgecolor="black",
+            linewidth=1.0,
+        ),
+        arrowprops=dict(
+            arrowstyle="->",
+            linewidth=1.2,
+        ),
     )
 
     # -------------------------------------------------------------------------
-    # Difference annotation
+    # Teacher supervision bracket / connection
     # -------------------------------------------------------------------------
 
-    midpoint = (fp32_mean + int8_mean) / 2
+    ax.plot(
+        [1, 2],
+        [35.5, 35.5],
+        linewidth=1.2,
+        color="0.35",
+        zorder=2,
+    )
+
+    ax.plot(
+        [1, 1],
+        [35.5, 33.8],
+        linewidth=1.2,
+        color="0.35",
+        zorder=2,
+    )
+
+    ax.plot(
+        [2, 2],
+        [35.5, 33.8],
+        linewidth=1.2,
+        color="0.35",
+        zorder=2,
+    )
+
+    # -------------------------------------------------------------------------
+    # W1 improvement annotation
+    # -------------------------------------------------------------------------
 
     ax.annotate(
-        f"Δ = {delta:+.3f} chrF++",
-        xy=(midpoint, 0),
-        xytext=(0, 42),
-        textcoords="offset points",
+        f"W1 improvement: −{improvement:.2f} pp",
+        xy=(1, wer[1]),
+        xytext=(0.35, 25.5),
         ha="center",
-        va="bottom",
+        va="center",
         fontsize=10,
+        arrowprops=dict(
+            arrowstyle="->",
+            linewidth=1.0,
+        ),
     )
 
     # -------------------------------------------------------------------------
     # Axes
     # -------------------------------------------------------------------------
 
-    margin = 0.035
-
-    ax.set_xlim(
-        min(int8_mean, fp32_mean) - margin,
-        max(int8_mean, fp32_mean) + margin,
+    ax.set_title(
+        "Primary ASR Knowledge Distillation: Whisper-base with Parakeet Supervision",
+        fontsize=14.5,
+        fontweight="bold",
+        pad=16,
     )
 
-    ax.set_ylim(-0.55, 0.55)
-
-    ax.set_yticks([])
-
-    ax.set_xlabel(
-        "Mean chrF++ Score",
+    ax.set_ylabel(
+        "Word Error Rate (WER, %)",
         fontsize=12,
     )
 
-    ax.set_title(
-        "MarianMT Translation Quality: FP32 vs. Dynamic INT8",
-        fontsize=15,
-        pad=14,
+    ax.set_xticks(x)
+    ax.set_xticklabels(
+        models,
+        fontsize=10.5,
+    )
+
+    ax.set_ylim(0, 50)
+
+    ax.tick_params(
+        axis="y",
+        labelsize=10,
     )
 
     # -------------------------------------------------------------------------
-    # X-axis grid
+    # Grid
     # -------------------------------------------------------------------------
 
     ax.grid(
-        axis="x",
+        axis="y",
         linestyle="--",
         linewidth=0.7,
         alpha=0.35,
+        zorder=0,
     )
 
     ax.set_axisbelow(True)
@@ -199,32 +213,6 @@ def generate_figure():
 
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
-    ax.spines["left"].set_visible(False)
-
-    # -------------------------------------------------------------------------
-    # Sample information
-    # -------------------------------------------------------------------------
-
-    ax.text(
-        0.98,
-        0.96,
-        f"CoVoST2 test set: N = {n:,}",
-        transform=ax.transAxes,
-        ha="right",
-        va="top",
-        fontsize=9,
-    )
-
-    # -------------------------------------------------------------------------
-    # Legend
-    # -------------------------------------------------------------------------
-
-    ax.legend(
-        frameon=False,
-        loc="lower left",
-        ncol=2,
-        fontsize=10,
-    )
 
     # -------------------------------------------------------------------------
     # Layout
@@ -232,33 +220,29 @@ def generate_figure():
 
     fig.tight_layout()
 
-    # -------------------------------------------------------------------------
+        # -------------------------------------------------------------------------
     # Save PNG
     # -------------------------------------------------------------------------
 
-    png_path = (
-        OUTPUT_DIR
-        / "figure_04_fp32_vs_int8_quality.png"
-    )
+    png_path = PROJECT_ROOT / "figures" / "figure_09_primary_asr_kd_wer.png"
 
     fig.savefig(
-        png_path,
+        str(png_path),
         dpi=300,
         bbox_inches="tight",
+        format="png",
     )
 
     # -------------------------------------------------------------------------
     # Save PDF
     # -------------------------------------------------------------------------
 
-    pdf_path = (
-        OUTPUT_DIR
-        / "figure_04_fp32_vs_int8_quality.pdf"
-    )
+    pdf_path = PROJECT_ROOT / "figures" / "figure_09_primary_asr_kd_wer.pdf"
 
     fig.savefig(
-        pdf_path,
+        str(pdf_path),
         bbox_inches="tight",
+        format="pdf",
     )
 
     plt.close(fig)
@@ -268,6 +252,10 @@ def generate_figure():
     print()
     print("Figure generated successfully.")
 
+
+# =============================================================================
+# MAIN
+# =============================================================================
 
 if __name__ == "__main__":
     generate_figure()
